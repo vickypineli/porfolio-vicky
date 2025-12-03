@@ -1,0 +1,53 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+// Importar módulos por idioma y página
+import esHome from "./es/home.json";
+import esAbout from "./es/about.json";
+import esProjects from "./es/projects.json";
+import esSkills from "./es/skills.json";
+import esContact from "./es/contact.json";
+
+import enHome from "./en/home.json";
+import enAbout from "./en/about.json";
+import enProjects from "./en/projects.json";
+import enSkills from "./en/skills.json";
+import enContact from "./en/contact.json";
+
+import euHome from "./eu/home.json";
+import euAbout from "./eu/about.json";
+import euProjects from "./eu/projects.json";
+import euSkills from "./eu/skills.json";
+import euContact from "./eu/contact.json";
+
+i18n
+  .use(initReactI18next)
+  .init({
+    lng: "es",
+    fallbackLng: "es",
+    resources: {
+      es: {
+        home: esHome,
+        about: esAbout,
+        projects: esProjects,
+        skills: esSkills,
+        contact: esContact
+      },
+      en: {
+        home: enHome,
+        about: enAbout,
+        projects: enProjects,
+        skills: enSkills,
+        contact: enContact
+      },
+      eu: {
+        home: euHome,
+        about: euAbout,
+        projects: euProjects,
+        skills: euSkills,
+        contact: euContact
+      }
+    }
+  });
+
+export default i18n;
