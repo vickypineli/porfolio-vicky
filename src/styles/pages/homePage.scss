@@ -1,0 +1,124 @@
+// src/styles/pages/homePage.scss
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+
+  // respaldo visual si Vanta no carga
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+}
+
+.home-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.home-content {
+  z-index: 2;
+  text-align: left;
+  padding: 1rem 0;
+}
+
+.home-title {
+  font-family: "Lora", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text);
+  line-height: 1.05;
+}
+
+.home-role {
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.home-phrase {
+  margin: 0 0 1.25rem 0;
+  color: var(--color-text);
+  max-width: 56ch;
+  opacity: 0.9;
+}
+
+/* CTA */
+.home-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.home-cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--color-text);
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: 6px;
+  transition: background-color .25s ease, color .25s ease, transform .12s ease;
+  background: transparent;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background: var(--color-text);
+    color: var(--color-bg);
+    transform: translateY(-2px);
+    outline: none;
+  }
+}
+
+/* foto */
+.home-photo-wrapper {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.home-photo {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform .2s ease-out, filter .25s ease;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* hover opcional (solo en proyectos/galería) */
+/* .project-card:hover .project-image { filter: none; } */
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .home-content { order: 2; }
+  .home-photo-wrapper { order: 1; max-width: 60%; margin: 0 auto 1.25rem; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home-photo { transition: none !important; }
+  .home-cta { transition: none !important; transform: none !important; }
+}

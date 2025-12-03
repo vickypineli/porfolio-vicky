@@ -1,5 +1,7 @@
 {
-"welcome": "Kaixo, Vicky naiz",
-"subtitle": "Frontend Garatzailea",
-"cta": "Ikusi nire proiektuak"
+  "welcome": "Kaixo, Vicky naiz",
+  "subtitle": "Frontend Garatzailea",
+  "phrase": "Interfaze garbi, irisgarri eta humanoak sortzen.",
+  "cta": "Ikusi proiektuak",
+  "altPhoto": "Vicky-ren argazkia"
 }
