@@ -1,6 +1,20 @@
-$color-light-bg: #ffffff;
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #d4af37;
+  --color-gray: #e5e7eb;
+}
+
+[data-theme='dark'] {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-accent: #d4af37;
+  --color-gray: #2a2a2a;
+}
+$color-light-bg: #7192ff;
 $color-dark-bg: #020224;
-$color-primary: #cd08f5;
+$color-primary: #ff00d1;
 $color-secondary: #c6c1c7;
 $color-gray: #E5E7EB;
 $accent-gold: #D4AF37;
