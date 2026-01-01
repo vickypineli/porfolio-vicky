@@ -7,18 +7,22 @@ import esAbout from "./es/about.json";
 import esProjects from "./es/projects.json";
 import esSkills from "./es/skills.json";
 import esContact from "./es/contact.json";
+import esHeader from "./es/header.json";
 
 import enHome from "./en/home.json";
 import enAbout from "./en/about.json";
 import enProjects from "./en/projects.json";
 import enSkills from "./en/skills.json";
 import enContact from "./en/contact.json";
+import enHeader from "./en/header.json";
+
 
 import euHome from "./eu/home.json";
 import euAbout from "./eu/about.json";
 import euProjects from "./eu/projects.json";
 import euSkills from "./eu/skills.json";
 import euContact from "./eu/contact.json";
+import euHeader from "./eu/header.json";
 
 i18n
   .use(initReactI18next)
@@ -31,21 +35,24 @@ i18n
         about: esAbout,
         projects: esProjects,
         skills: esSkills,
-        contact: esContact
-      },
-      en: {
-        home: enHome,
-        about: enAbout,
-        projects: enProjects,
-        skills: enSkills,
-        contact: enContact
+        contact: esContact,
+        header: esHeader
       },
       eu: {
         home: euHome,
         about: euAbout,
         projects: euProjects,
         skills: euSkills,
-        contact: euContact
+        contact: euContact,
+        header: euHeader
+      },
+      en: {
+        home: enHome,
+        about: enAbout,
+        projects: enProjects,
+        skills: enSkills,
+        contact: enContact,
+        header: enHeader
       }
     }
   });

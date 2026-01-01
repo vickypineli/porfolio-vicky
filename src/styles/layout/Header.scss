@@ -1,0 +1,208 @@
+//src/styles/layout/Header.scss
+@use "../variables" as *;
+@use "../mixins" as *;
+
+/* ====== HEADER BASE (GLASS EFFECT) ====== */
+.header {
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  position: fixed;
+  //top: 0;
+  //left: 0;
+  margin: auto;
+  z-index: 80;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  background: rgba(var(--rgb-bg), 0.15);
+  border-bottom: 1px solid rgba(var(--rgb-text), 0.12);
+
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.header-inner {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ====== LOGO ====== */
+.header-logo {
+  font-size: 2rem;
+  letter-spacing: -0.5rem;
+  font-family: "Montserrat", sans-serif;
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .spanM,
+  .spanP {
+    color: var(--color-accent);
+  }
+
+  .spanv {
+    color: var(--color-text);
+  }
+}
+
+/* ====== NAV LINKS (COMPARTIDO) ====== */
+.nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+
+  &.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+  }
+}
+
+/* ====== NAV ESCRITORIO ====== */
+.desktop-nav {
+  display: flex;
+  gap: 1.4rem;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+}
+
+/* ====== ACCIONES (IDIOMAS + TEMA) ====== */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+
+  button {
+    background: transparent;
+    border: 1px solid var(--color-text);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--color-text);
+      color: var(--color-bg);
+    }
+  }
+}
+
+/* ====== HAMBURGUESA ====== */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+
+  span {
+    width: 24px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 850px) {
+    display: flex;
+  }
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ====== MOBILE NAV ====== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 70%;
+  max-width: 300px;
+  background: rgba(var(--rgb-bg), 0.85);
+  backdrop-filter: blur(14px);
+  padding: 5rem 2rem;
+  z-index: 150;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  overflow-y: auto;
+  transition: left 0.35s ease;
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  &.open {
+    left: 0;
+  }
+}
+
+/* ====== MOBILE EXTRAS ====== */
+.mobile-lang {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    background: transparent;
+    border: 1px solid var(--color-text);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+}
+
+.mobile-nav hr {
+  border: none;
+  border-top: 1px solid rgba(var(--rgb-text), 0.2);
+  margin: 1rem 0;
+}

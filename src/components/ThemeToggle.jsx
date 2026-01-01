@@ -9,7 +9,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Cambiar tema"
-      style={{ background: "none", border: "none", cursor: "pointer" }}
+      style={{ background: "none", border: "none", cursor: "pointer", margin: 5, padding: 10, color: "var(--color-text)" }}
     >
       {theme === "light" ? <Moon /> : <Sun />}
     </button>

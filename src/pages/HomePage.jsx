@@ -30,13 +30,14 @@ export default function Home() {
             scale: 1.00,
             scaleMobile: 1.00,
             color1: 0xff00d1, // colores personalizables
-            color2: 0xd1ff,
+            color2: 0x460039,
             separation: 20,
             cohesion: 20,
             quantity: 5,
             size: 2.00,
             speed: 2.5,
-            showBackground: false
+            showBackground: false,
+            colorMode: "lerpGradient"
         });
       } catch (err) {
         console.error("Error iniciando Vanta:", err);
@@ -65,7 +66,7 @@ export default function Home() {
         <div className="container home-inner">
           <div className="home-content" aria-hidden={false}>
             <h1 id="home-heading" className="home-title">
-              {t("welcomeLine", { name: "Vicky" })}
+              {t("welcome", { name: "Vicky" })}
             </h1>
 
             <p className="home-role">{t("subtitle")}</p>
