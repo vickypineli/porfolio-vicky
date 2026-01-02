@@ -1,4 +1,14 @@
 {
 "title": "Niri buruz",
-"description": "Frontend garatzailea naiz, 30 urteko esperientzia eta ikasteko pasioa."
+"description": "Frontend garatzailea naiz, 30 urteko esperientzia eta ikasteko pasioa.",
+"name": "Nire izena Mª Victoria Pinero da eta Barakaldon (Bizkaian) bizi naiz.",
+"evolution": "Administrari gisa trebatu nintzen, estilismoaren munduan ekintzaile gisa hazi nintzen eta Full Stack programatzaile gisa garatuko dut nire etorkizuna.",
+"profile": "Pertsona dinamikoa eta arduratsua naiz, erronka berriei beldurrik gabe heltzen diena. Bezeroekiko harremanetan, fakturazioan eta baliabideen kudeaketan 20 urte baino gehiagoko esperientzia dut. Lanbide bide horrek gaur egun asko baloratzen ditudan gaitasunak eman dizkit, batez ere bezeroaren eta enpresaren arteko harreman onak sustatzeko orduan.",
+"current": "Gaur egun, teknologia berriak hezkuntza-komunitatera hurbiltzeko proiektuetan murgilduta nago. Horri esker, nire bizitza profesionala aldatu duen mundu zirraragarria aurkitu dut. Gaur egun, nire indar guztiak ezagutza berriak eskuratzen ari naiz, etorkizun hurbilean web aplikazioak garatu ahal izateko, betiere hezkuntza-metodologia berrietan (adimun anizkoitzak, gamifikazioa eta autoikaskuntza) oinarrituta.",
+"hobbies_title": "Programatzeaz gain, hona hemen nire zaletasun gogokoenetako batzuk:",
+"hobbies_list": [
+        "Sukaldaritza",
+        "Brikolajea eta erabilitako altzariak zaharberritzea",
+        "Bidaiatzea"
+      ]
 }

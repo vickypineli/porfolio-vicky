@@ -1,4 +1,14 @@
 {
-"title": "Sobre mí",
-"description": "Soy una programadora frontend con 30 años de experiencia y pasión por aprender."
+"title": "Esta soy yo",
+"description": "Soy una programadora frontend con 30 años de experiencia y pasión por aprender.",
+"name": "Mi nombre es Mª Victoria Pinero, y vivo en Barakaldo (Bizkaia).",
+"evolution": "Me formé como administrativa, crecí como emprendedora en el mundo del estilismo y me voy a hacer mayor como programadora full stack.",
+"profile": "Me considero una persona dinámica, responsable y sin miedo a afrontar nuevos retos, con más de 20 años de experiencia en diferentes trabajos enfocados a la relación con el cliente, facturación y gestión de recursos, trabajos que me han dado muchas satisfacciones como a valorar e incentivar las buenas relaciones cliente-empresa.",
+"current": "En la actualidad estoy involucrada en diferentes proyectos para acercar las nuevas tecnologías a los distintos agentes de la comunidad educativa escolar, que me ha hecho descubrir un mundo apasionante que ha cambiado mi vida profesional, y que a día de hoy, estoy volcada en adquirir los conocimientos necesarios para poder en un futuro próximo, desarrollar aplicaciones web en el ámbito de las nuevas metodologías educativas, basadas en inteligencias múltiples, la gamificación y el autoaprendizaje.",
+"hobbies_title": "Además de programar, estas son algunas aficiones que me encanta realizar!",
+"hobbies_list": [
+    "Cocinar",
+    "Bricolaje y restauración de muebles usados",
+    "Viajar"
+]
 }

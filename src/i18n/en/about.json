@@ -1,4 +1,14 @@
 {
 "title": "About me",
-"description": "I'm a frontend developer with 30 years of experience and a passion for learning."
+"description": "I'm a frontend developer with 30 years of experience and a passion for learning.",
+"name": "My name is Mª Victoria Pinero, and I live in Barakaldo (Bizkaia).",
+"evolution": "I trained as an administrative assistant, grew as an entrepreneur in the world of styling, and I’m ready to evolve as a Full Stack Developer.",
+"profile": "I consider myself a dynamic and responsible person who isn't afraid of new challenges. With over 20 years of experience in customer relations, billing, and resource management, my career has taught me the value of fostering strong company-client relationships—a journey that has been incredibly rewarding.",
+"current": "Currently, I am involved in several projects aimed at bringing new technologies to the educational community. This experience has led me to discover an exciting world that has changed my professional life. Today, I am fully committed to acquiring the skills needed to develop web applications focused on modern educational methodologies, such as multiple intelligences, gamification, and self-directed learning.",
+"hobbies_title": "Besides coding, here are some things I love to do!",
+"hobbies_list": [
+    "Cooking",
+    "DIY & furniture restoration",
+    "Traveling"
+    ]
 }
