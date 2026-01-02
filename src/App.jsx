@@ -1,6 +1,6 @@
 //src/App.jsx
 import AppRoutes from "./routes/AppRoutes";
-import Header from "./layout/Header";
+import Header from "./layout/Header/Header";
 import "./styles/main.scss";
 
 

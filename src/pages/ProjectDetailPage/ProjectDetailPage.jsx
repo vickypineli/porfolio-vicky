@@ -1,7 +1,7 @@
 // src/pages/ProjectDetailPage.jsx
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/projects";
-import "../styles/pages/ProjectDetail.scss";
+import { projects } from "../../data/projects";
+import "./ProjectDetailPage.module.scss";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();

@@ -1,7 +1,7 @@
 // src/layout/MainLayout.jsx
-import Header from "./Header";
+import Header from "../Header/Header";
 import { Outlet } from "react-router-dom";
-import "../styles/layout/MainLayout.scss";
+import "./MainLayout.module.scss";
 
 export default function MainLayout() {
   return (

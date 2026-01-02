@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ThemeToggle from "../components/ThemeToggle";
-import "../styles/layout/Header.scss";
+import ThemeToggle from "../../components/ThemeToggle/ThemeToggle";
+import "./Header.module.scss";
 
 export default function Header() {
   const { i18n, t } = useTranslation("header");

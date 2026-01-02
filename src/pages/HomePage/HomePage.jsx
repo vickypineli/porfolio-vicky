@@ -1,7 +1,7 @@
 // src/pages/HomePage.jsx
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/pages/homePage.scss";
+import "./HomePage.module.scss";
 
 export default function Home() {
   const { t } = useTranslation("home");

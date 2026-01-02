@@ -3,19 +3,9 @@
    ENTRY POINT GLOBAL DE ESTILOS
    Este archivo NO define estilos concretos de componentes
    ====================================================== */
-
-
-/* 1. Imports (SIEMPRE ARRIBA) */
 @use './variables' as *;
 @use './mixins' as *;
-@use './typography';
-
-@use './layout/Header';
-@use './layout/MainLayout';
-
-@use './pages/homePage';
-@use './pages/Projects';
-@use './pages/ProjectDetail';
+@use './_typography' as *;
 
 /* 2. Reset + estilos globales */
 *,
@@ -35,7 +25,7 @@ body {
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-text);
+  //color: var(--color-text);
   line-height: 1.6;
 }
 
