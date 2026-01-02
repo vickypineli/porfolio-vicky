@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { Sun, Moon } from "lucide-react";
+import styles from "./ThemeToggle.module.scss";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -9,7 +10,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Cambiar tema"
-      style={{ background: "none", border: "none", cursor: "pointer", margin: 5, padding: 10, color: "var(--color-text)" }}
+      className={styles.themeToggle}
     >
       {theme === "light" ? <Moon /> : <Sun />}
     </button>

@@ -1,0 +1,26 @@
+//src/components/ThemeToggle/ThemeToggle.module.scss
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0.25rem; // equivalente a 5px
+  padding: 0.625rem; // equivalente a 10px
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

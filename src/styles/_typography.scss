@@ -1,34 +1,53 @@
 // src/styles/_typography.scss
 @use './variables' as *;
 
-/* Tipografía base */
+/* ======================================================
+   BASE TEXT
+   ====================================================== */
+
 body {
   font-family: $font-base;
   font-size: $font-size-base;
-  line-height: 1.6;
+  line-height: $line-height-base;
   color: var(--color-text);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
+/* ======================================================
+   HEADINGS
+   ====================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
   color: var(--color-accent);
+  line-height: $line-height-heading;
+  font-weight: 600;
 }
 
-
+/* Jerarquía */
 h1 {
   font-size: $font-size-2xl;
-  font-weight: 600;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: $font-size-xl;
-  font-weight: 600;
   text-transform: uppercase;
 }
 
 h3 {
   font-size: $font-size-lg;
-  font-weight: 600;
   text-transform: capitalize;
+}
+
+/* Headings menores: neutros */
+h4,
+h5,
+h6 {
+  font-size: $font-size-base;
+  text-transform: none;
 }

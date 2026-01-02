@@ -1,7 +1,7 @@
 // src/pages/HomePage.jsx
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import "./HomePage.module.scss";
+import styles from "./HomePage.module.scss";
 
 export default function Home() {
   const { t } = useTranslation("home");
@@ -57,42 +57,26 @@ export default function Home() {
 
   return (
     <main>
-      <section
-        className="home"
-        ref={vantaRef}
-        aria-labelledby="home-heading"
-        role="region"
-      >
-        <div className="container home-inner">
-          <div className="home-content" aria-hidden={false}>
-            <h1 id="home-heading" className="home-title">
+      <section className={styles.home} ref={vantaRef} aria-labelledby="home-heading">
+        <div className={styles.homeInner}>
+          <div className={styles.homeContent}>
+            <h1 id="home-heading" className={styles.homeTitle}>
               {t("welcome", { name: "Vicky" })}
             </h1>
 
-            <p className="home-role">{t("subtitle")}</p>
+            <p className={styles.homeRole}>{t("subtitle")}</p>
+            <p className={styles.homePhrase}>{t("phrase")}</p>
 
-            <p className="home-phrase">{t("phrase")}</p>
-
-            <div className="home-actions">
-              {/* Link a sección de proyectos (ancla o ruta) */}
-              <a href="#projects" className="home-cta">
+            <div className={styles.homeActions}>
+              <a href="#projects" className={styles.homeCta}>
                 {t("cta")}
               </a>
-              {/* Alternativa con react-router */}
-              {/* <Link to="/projects" className="home-cta">{t('cta')}</Link> */}
             </div>
           </div>
 
-          {/* <aside className="home-photo-wrapper" aria-hidden="false">
-            <img
-              id="home-photo"
-              src="/assets/profile-bw.jpg" // coloca tu foto en /public/assets/
-              alt={t("altPhoto")}
-              className="home-photo"
-              width="600"
-              height="800"
-              loading="lazy"
-            />
+          {/* Foto opcional */}
+          {/* <aside className={styles.homePhotoWrapper}>
+            <img src="/assets/profile-bw.jpg" alt={t("altPhoto")} className={styles.homePhoto} />
           </aside> */}
         </div>
       </section>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeToggle from "../../components/ThemeToggle/ThemeToggle";
-import "./Header.module.scss";
+import styles from "./Header.module.scss";
 
 export default function Header() {
   const { i18n, t } = useTranslation("header");
@@ -13,30 +13,22 @@ export default function Header() {
   const closeMenu = () => setOpen(false);
 
     const navLinkClass = ({ isActive }) =>
-    isActive ? "nav-link active" : "nav-link";
+    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
 
   return (
-    <header className="header">
-      <div className="header-inner">
-
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
         {/* LOGO */}
-        <div className="header-logo">
+        <div className={styles.headerLogo}>
           <a href="#home">
-            <span className="spanM">M</span>
-            <span className="spanv">V</span>
-            <span className="spanP">P</span>
+            <span className={styles.spanM}>M</span>
+            <span className={styles.spanV}>V</span>
+            <span className={styles.spanP}>P</span>
           </a>
         </div>
 
         {/* NAV ESCRITORIO */}
-        {/* <nav className={`desktop-nav`}>
-          <a href="#home">{t("home")}</a>
-          <a href="#about">{t("about")}</a>
-          <a href="#projects">{t("projects")}</a>
-          <a href="#skills">{t("skills")}</a>
-          <a href="#contact">{t("contact")}</a>
-        </nav> */}
-        <nav className="desktop-nav">
+        <nav className={styles.desktopNav}>
           <NavLink to="/" end className={navLinkClass}>{t("home")}</NavLink>
           <NavLink to="/about" className={navLinkClass}>{t("about")}</NavLink>
           <NavLink to="/projects" className={navLinkClass}>{t("projects")}</NavLink>
@@ -45,7 +37,7 @@ export default function Header() {
         </nav>
 
         {/* IDIOMAS + THEME */}
-        <div className="lang-switcher">
+        <div className={styles.langSwitcher}>
           <button onClick={() => changeLang("es")}>ES</button>
           <button onClick={() => changeLang("en")}>EN</button>
           <button onClick={() => changeLang("eu")}>EU</button>
@@ -54,7 +46,7 @@ export default function Header() {
 
         {/* HAMBURGUESA */}
         <button
-          className={`burger ${open ? "open" : ""}`}
+          className={`${styles.burger} ${open ? styles.open : ""}`}
           aria-label="Abrir menú"
           onClick={() => setOpen(!open)}
         >
@@ -64,15 +56,9 @@ export default function Header() {
         </button>
       </div>
 
+
       {/* MENU MOVIL */}
-      {/* <nav className={`mobile-nav ${open ? "open" : ""}`}>
-        <a href="#home" onClick={() => setOpen(false)}>{t("home")}</a>
-        <a href="#about" onClick={() => setOpen(false)}>{t("about")}</a>
-        <a href="#projects" onClick={() => setOpen(false)}>{t("projects")}</a>
-        <a href="#skills" onClick={() => setOpen(false)}>{t("skills")}</a>
-        <a href="#contact" onClick={() => setOpen(false)}>{t("contact")}</a>
-      </nav> */}
-      <nav className={`mobile-nav ${open ? "open" : ""}`}>
+      <nav className={`${styles.mobileNav} ${open ? styles.open : ""}`}>
         <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>
           {t("home")}
         </NavLink>
@@ -88,12 +74,17 @@ export default function Header() {
         <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
           {t("contact")}
         </NavLink>
-       {/* SEPARADOR */}
-        <hr />
-      
-      {/* THEME MOVIL */}
+
+        {/* <hr /> */}
         <ThemeToggle />
-        </nav>
+                {/* IDIOMAS + THEME */}
+        <div className={styles.langSwitcher}>
+          <button onClick={() => changeLang("es")}>ES</button>
+          <button onClick={() => changeLang("en")}>EN</button>
+          <button onClick={() => changeLang("eu")}>EU</button>
+          <ThemeToggle />
+        </div>
+      </nav>
     </header>
   );
 }

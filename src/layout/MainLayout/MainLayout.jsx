@@ -6,7 +6,6 @@ import "./MainLayout.module.scss";
 export default function MainLayout() {
   return (
     <>
-      <Header />
       <main className="main-content">
         <Outlet />
       </main>

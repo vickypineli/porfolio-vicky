@@ -1,13 +1,14 @@
 //src/styles/main.scss
 /* ======================================================
    ENTRY POINT GLOBAL DE ESTILOS
-   Este archivo NO define estilos concretos de componentes
+   SOLO reset + layout base
    ====================================================== */
-@use './variables' as *;
-@use './mixins' as *;
-@use './_typography' as *;
 
-/* 2. Reset + estilos globales */
+@use './variables';
+@use './mixins';
+@use './typography';
+
+/* Reset básico */
 *,
 *::before,
 *::after {
@@ -25,8 +26,6 @@ body {
 
 body {
   background-color: var(--color-bg);
-  //color: var(--color-text);
-  line-height: 1.6;
 }
 
 /* Root de React */
