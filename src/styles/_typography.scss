@@ -1,39 +1,33 @@
-@use "./variables" as *;
-@use "./mixins" as *;
-@use "./typography" as *;
+// src/styles/_typography.scss
+@use './variables' as *;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Tipografía base */
+body {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: var(--color-text);
 }
 
-// body {
-//   background-color: $light-color;
-//   color: $color-text;
-//   font-family: $font-main;
-
-// }
+/* Headings */
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+}
 
 h1 {
   font-size: 2rem;
-  color: $primary-color;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2rem;
-  color: $primary-color;
-  padding: 0.5rem ;
-  text-align: center;
   text-transform: uppercase;
-} 
+}
 
 h3 {
   font-size: 1.5rem;
-  color: $secondary-color;
-  padding: 1rem;
-  text-transform: capitalize;
-  text-align: center;
   font-weight: 600;
-  
+  text-transform: capitalize;
 }

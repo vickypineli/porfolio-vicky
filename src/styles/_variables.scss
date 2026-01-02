@@ -1,12 +1,17 @@
+// src/styles/_variables.scss
+// ─────────────────────────────────────────────
+// 🌍 CSS Variables globales (themes)
+// ─────────────────────────────────────────────
 
 :root {
   --color-bg: #ffffff;
   --color-text: #141414;
-  --color-accent: #ff00d1;;
+  --color-accent: #ff00d1;
   --color-gray: #e5e7eb;
-    /* versiones RGB para efectos translucidos */
+
+  /* RGB para transparencias */
   --rgb-bg: 255, 255, 255;
-  --rgb-text: 0, 0, 0;
+  --rgb-text: 20, 20, 20;
 }
 
 [data-theme='dark'] {
@@ -18,11 +23,29 @@
   --rgb-bg: 13, 13, 13;
   --rgb-text: 255, 255, 255;
 }
-$color-light-bg: #7192ff;
-$color-dark-bg: #020224;
-$color-primary: #ff00d1;
-$color-secondary: #c6c1c7;
-$color-gray: #E5E7EB;
-$accent-gold: #D4AF37;
-$color-bird2: #e5e7eb;
-$color-bird1: #ff00d1;
+// _variables.scss (parte SASS)
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+
+$z-header: 1000;
+$z-modal: 2000;
+
+// ─────────────────────────────────────────────
+// 🔤 Tipografía (SASS - estructural)
+// ─────────────────────────────────────────────
+
+$font-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.5rem;
+
+
+// Regla de oro (guárdala)
+// Si algo depende del theme → CSS variable
+// Si algo es estructural → SASS variable
