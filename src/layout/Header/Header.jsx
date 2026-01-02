@@ -75,15 +75,14 @@ export default function Header() {
           {t("contact")}
         </NavLink>
 
-        {/* <hr /> */}
-        <ThemeToggle />
-                {/* IDIOMAS + THEME */}
-        <div className={styles.langSwitcher}>
+        <hr /> 
+        
+        <div className={styles.langSwitcherNav}>
           <button onClick={() => changeLang("es")}>ES</button>
           <button onClick={() => changeLang("en")}>EN</button>
           <button onClick={() => changeLang("eu")}>EU</button>
-          <ThemeToggle />
         </div>
+        <ThemeToggle />
       </nav>
     </header>
   );
