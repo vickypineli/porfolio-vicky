@@ -1,4 +1,18 @@
 {
-"title": "Habilidades",
-"description": "Tecnologías y herramientas que domino."
+  "title": "Skills",
+  "intro": "Estas son algunas de las tecnologías y competencias con las que trabajo.",
+  "list": [
+    {
+      "name": "HTML & CSS",
+      "description": "Maquetación semántica, responsive y accesible."
+    },
+    {
+      "name": "JavaScript",
+      "description": "ES6+, asincronía, lógica y manipulación del DOM."
+    },
+    {
+      "name": "React",
+      "description": "Componentes, hooks, routing y estado."
+    }
+  ]
 }

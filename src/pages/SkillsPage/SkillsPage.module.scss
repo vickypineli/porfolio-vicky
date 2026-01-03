@@ -1,0 +1,53 @@
+//src/pages/SkillsPage/SkillsPage.module.scss
+
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.skills {
+  padding: 4rem 1.5rem;
+  margin: 100px auto 0 auto;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* GRID DE SKILLS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  background: rgba(var(--rgb-bg), 0.4);
+  border: 1px solid rgba(var(--rgb-text), 0.12);
+  border-radius: 12px;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+}

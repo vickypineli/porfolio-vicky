@@ -1,4 +1,18 @@
 {
-"title": "Skills",
-"description": "Technologies and tools I master."
-}
+    "title": "Skills",
+    "intro": "These are some of the technologies and skills I work with.",
+    "list": [
+      {
+        "name": "HTML & CSS",
+        "description": "Semantic layout, responsive design, and accessibility."
+      },
+      {
+        "name": "JavaScript",
+        "description": "ES6+, asynchrony, logic, and DOM manipulation."
+      },
+      {
+        "name": "React",
+        "description": "Components, hooks, routing, and state management."
+      }
+    ]
+  }

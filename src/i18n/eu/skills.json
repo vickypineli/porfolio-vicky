@@ -1,4 +1,18 @@
 {
-"title": "Gaitasunak",
-"description": "Jakindako teknologia eta tresnak."
-}
+    "title": "Trebetasunak",
+    "intro": "Hona hemen erabiltzen ditudan teknologia eta gaitasunetako batzuk.",
+    "list": [
+      {
+        "name": "HTML & CSS",
+        "description": "Maquetazio semantikoa, responsive-a eta irisgarria."
+      },
+      {
+        "name": "JavaScript",
+        "description": "ES6+, asinkronia, logika eta DOM manipulazioa."
+      },
+      {
+        "name": "React",
+        "description": "Osagaiak, hook-ak, routing-a eta egoeraren kudeaketa."
+      }
+    ]
+  }
