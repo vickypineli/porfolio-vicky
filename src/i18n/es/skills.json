@@ -1,18 +1,33 @@
 {
-  "title": "Skills",
-  "intro": "Estas son algunas de las tecnologías y competencias con las que trabajo.",
-  "list": [
-    {
-      "name": "HTML & CSS",
-      "description": "Maquetación semántica, responsive y accesible."
-    },
-    {
-      "name": "JavaScript",
-      "description": "ES6+, asincronía, lógica y manipulación del DOM."
-    },
-    {
-      "name": "React",
-      "description": "Componentes, hooks, routing y estado."
-    }
-  ]
+  "page_title": "skills",
+  "subtitle": "Herramientas",
+  "skillset_intro": "Mi lista de <strong>Skillset</strong> profesionales <strong>(Habilidades Técnicas)</strong>",
+  "toolset_intro": "Mi lista de <strong>Toolset</strong> profesionales <strong>(Herramientas y Software)</strong>",
+  "skills": {
+    "html5": "Maquetación semántica y accesible",
+    "css3": "Responsive, layouts modernos",
+    "javascript": "ES6+, asincronía",
+    "react": "Hooks, routing, estado",
+    "nextjs": "SSR y apps modernas",
+    "vue": "Componentes, routing, estado",
+    "sass": "Arquitectura CSS escalable",
+    "bootstrap": "Diseño responsive",
+    "python": "Bases de datos",
+    "sqlite": "Bases de datos",
+    "flask": "Bases de datos",
+    "php": "Desarrollo web",
+    "mariadb": "Bases de datos"
+  },
+  "tools": {
+    "linux": "Administración de sistemas",
+    "vscode": "Editor de código",
+    "git": "Control de versiones",
+    "bitbucket": "Repositorios Git",
+    "trello": "Gestión de proyectos",
+    "jira": "Seguimiento de incidencias",
+    "scrum": "Metodologías ágiles",
+    "canva": "Diseño gráfico",
+    "raspberrypi": "Proyectos educativos de hardware",
+    "figma": "Diseño gráfico y prototipado"
+  }
 }

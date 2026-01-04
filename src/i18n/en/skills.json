@@ -1,18 +1,33 @@
 {
-    "title": "Skills",
-    "intro": "These are some of the technologies and skills I work with.",
-    "list": [
-      {
-        "name": "HTML & CSS",
-        "description": "Semantic layout, responsive design, and accessibility."
-      },
-      {
-        "name": "JavaScript",
-        "description": "ES6+, asynchrony, logic, and DOM manipulation."
-      },
-      {
-        "name": "React",
-        "description": "Components, hooks, routing, and state management."
-      }
-    ]
+  "page_title": "skills",
+  "subtitle": "Tools",
+  "skillset_intro": "My professional <strong>Skillset(Technical Skills)</strong>",
+  "toolset_intro": "My professional <strong>Toolset(Tools and Software)</strong>",
+  "skills": {
+    "html5": "Semantic and accessible layout",
+    "css3": "Responsive, modern layouts",
+    "javascript": "ES6+, asynchrony",
+    "react": "Hooks, routing, state management",
+    "nextjs": "SSR and modern apps",
+    "vue": "Components, routing, state management",
+    "sass": "Scalable CSS architecture",
+    "bootstrap": "Responsive design",
+    "python": "Databases",
+    "sqlite": "Databases",
+    "flask": "Databases",
+    "php": "Web development",
+    "mariadb": "Databases"
+  },
+  "tools": {
+    "linux": "Systems administration",
+    "vscode": "Code editor",
+    "git": "Version control",
+    "bitbucket": "Git repositories",
+    "trello": "Project management",
+    "jira": "Issue tracking",
+    "scrum": "Agile methodologies",
+    "canva": "Graphic design",
+    "raspberrypi": "Educational hardware projects",
+    "figma": "Graphic design and prototyping"
   }
+}

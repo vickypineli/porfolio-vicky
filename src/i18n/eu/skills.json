@@ -1,18 +1,33 @@
 {
-    "title": "Trebetasunak",
-    "intro": "Hona hemen erabiltzen ditudan teknologia eta gaitasunetako batzuk.",
-    "list": [
-      {
-        "name": "HTML & CSS",
-        "description": "Maquetazio semantikoa, responsive-a eta irisgarria."
-      },
-      {
-        "name": "JavaScript",
-        "description": "ES6+, asinkronia, logika eta DOM manipulazioa."
-      },
-      {
-        "name": "React",
-        "description": "Osagaiak, hook-ak, routing-a eta egoeraren kudeaketa."
-      }
-    ]
+  "page_title": "trebetasunak",
+  "subtitle": "Tresnak",
+  "skillset_intro": "Nire <strong>Skillset</strong> profesionalen zerrenda <strong>(Gaitasun Teknikoak)</strong>",
+  "toolset_intro": "Nire <strong>Toolset</strong> profesionalen zerrenda <strong>(Tresnak eta Softwarea)</strong>",
+  "skills": {
+    "html5": "Maquetazio semantikoa eta irisgarria",
+    "css3": "Responsive-a, layout modernoak",
+    "javascript": "ES6+, asinkronia",
+    "react": "Hook-ak, routing-a, egoeraren kudeaketa",
+    "nextjs": "SSR eta aplikazio modernoak",
+    "vue": "Osagaiak, routing-a, egoeraren kudeaketa",
+    "sass": "CSS arkitektura eskalagarria",
+    "bootstrap": "Diseinu responsive-a",
+    "python": "Datu-baseak",
+    "sqlite": "Datu-baseak",
+    "flask": "Datu-baseak",
+    "php": "Web garapena",
+    "mariadb": "Datu-baseak"
+  },
+  "tools": {
+    "linux": "Sistemen administrazioa",
+    "vscode": "Kode editorea",
+    "git": "Bertsio-kontrola",
+    "bitbucket": "Git biltegiak",
+    "trello": "Proiektuen kudeaketa",
+    "jira": "Inzidentzien jarraipena",
+    "scrum": "Metodologia agilak",
+    "canva": "Diseinu grafikoa",
+    "raspberrypi": "Hardware hezkuntza-proiektuak",
+    "figma": "Diseinu grafikoa eta prototipatzea"
   }
+}
