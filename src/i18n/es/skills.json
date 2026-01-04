@@ -1,9 +1,8 @@
 {
-  "page_title": "skills",
-  "subtitle": "Herramientas",
-  "skillset_intro": "Mi lista de <strong>Skillset</strong> profesionales <strong>(Habilidades Técnicas)</strong>",
-  "toolset_intro": "Mi lista de <strong>Toolset</strong> profesionales <strong>(Herramientas y Software)</strong>",
+
   "skills": {
+    "section_title": "Skills",
+    "skillset_intro": "Mi lista de <strong>Skillset</strong> profesionales <strong>(Habilidades Técnicas)</strong>",
     "html5": "Maquetación semántica y accesible",
     "css3": "Responsive, layouts modernos",
     "javascript": "ES6+, asincronía",
@@ -19,6 +18,8 @@
     "mariadb": "Bases de datos"
   },
   "tools": {
+    "section_title": "Tools",
+    "toolset_intro": "Mi lista de <strong>Toolset</strong> profesionales <strong>(Herramientas y Software)</strong>",
     "linux": "Administración de sistemas",
     "vscode": "Editor de código",
     "git": "Control de versiones",

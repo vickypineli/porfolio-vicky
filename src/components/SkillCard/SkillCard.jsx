@@ -13,16 +13,17 @@ export default function SkillCard({ icon: Icon, title, description }) {
       className={`${styles.card} ${open ? styles.open : ""}`}
       onClick={toggle}
       aria-expanded={open}
+      aria-label={`${title}: ${description}`}
       type="button"
     >
-      <div className={styles.icon}>
-        <Icon size={55} />
-      </div>
+      <span className={styles.icon} aria-hidden="true">
+        <Icon />
+      </span>
 
-      <div className={styles.content}>
+      <span className={styles.content}>
         <h3>{title}</h3>
         <p>{description}</p>
-      </div>
+      </span>
     </button>
   );
 }
