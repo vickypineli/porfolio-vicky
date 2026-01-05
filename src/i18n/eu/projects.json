@@ -1,4 +1,20 @@
 {
-"title": "Proiektuak",
-"description": "Hona hemen nire proiektu nabarmenenak."
+"page_title": "Proiektuak",
+  "projects": {
+    "edu_platform": {
+      "description": "Gamifikazioa eta jarduerazko ikasketa oinarritutako plataforman."
+    },
+    "portfolio": {
+      "description": "React eta SCSS erabiliz garatutako portfolio pertsonala."
+    },
+    "ecommerce_site": {
+      "description": "Erosketa-egitura eta ordainketa-pasartea dituen webgunea."
+    },
+    "web_app": {
+      "description": "Zereginen eta produktibitatearen kudeaketarako web aplikazioa."
+    },
+    "mobile_app": {
+      "description": "Blogak editatzeko WYSIWYG editorearekin eta iruzkin-sistemarekin mobile aplikazioa."
+    }
+  }
 }

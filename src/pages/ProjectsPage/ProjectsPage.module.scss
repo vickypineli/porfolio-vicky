@@ -1,13 +1,17 @@
 /* src/pages/ProjectsPage/ProjectsPage.module.scss */
 
-.page {
+.projects {
   padding: 2rem 1.5rem;
-  max-width: 1200px;
   margin: 50px auto;
 }
 
-.title {
-  margin-bottom: 2rem;
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .grid {

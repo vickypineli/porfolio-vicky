@@ -1,16 +1,19 @@
 // src/pages/ProjectDetailPage.jsx
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../../data/projects";
-import "./ProjectDetailPage.module.scss";
+import { projectsData } from "../../data/projectsData";
+import { useTranslation } from "react-i18next";
+
+import styles from "./ProjectDetailPage.module.scss";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
+  const { t } = useTranslation("projects");
 
-  const project = projects.find((p) => p.slug === slug);
+  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
     return (
-      <section className="project-detail">
+      <section className={styles.projectDetail}>
         <h1>Proyecto no encontrado</h1>
         <Link to="/projects">← Volver a proyectos</Link>
       </section>
@@ -18,37 +21,19 @@ export default function ProjectDetailPage() {
   }
 
   return (
-    <section className="project-detail">
-      <header className="project-header">
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
-      </header>
+    <section className={styles.projectDetail}>
+      <h1>{project.title}</h1>
+      <p>{t(`projects.${project.id}.description`)}</p>
 
-      <div className="project-meta">
-        <h3>Tecnologías</h3>
-        <ul>
-          {project.technologies.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
-      </div>
+      <h3>Tecnologías</h3>
+      <ul>
+        {project.tech.map((tech) => (
+          <li key={tech}>{tech}</li>
+        ))}
+      </ul>
 
-      <div className="project-actions">
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Ver código
-          </a>
-        )}
-
-        <Link to="/projects" className="btn secondary">
-          ← Volver
-        </Link>
-      </div>
+      <Link to="/projects">← Volver</Link>
     </section>
   );
 }
+

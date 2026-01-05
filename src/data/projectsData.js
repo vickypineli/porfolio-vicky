@@ -1,0 +1,48 @@
+// src/data/projectsData.js
+export const projectsData = [
+    {
+      id: "edu_platform",
+      slug: "edu-platform",
+      title: "Plataforma educativa",
+      image: "/assets/projects/edu-platform.jpg",
+      tech: ["React", "Node", "MongoDB"],
+      repo: "https://github.com/...",
+      demo: "https://...",
+    },
+    {
+      id: "portfolio",
+      slug: "portfolio",
+      title: "Portfolio personal",
+      image: "/assets/projects/portfolio.jpg",
+      tech: ["React", "SCSS"],
+      repo: "https://github.com/...",
+      demo: "",
+    },
+    {
+      id: "ecommerce_site",
+      slug: "ecommerce-site",
+      title: "Sitio de comercio electrónico",
+      image: "/assets/projects/ecommerce-site.jpg",
+      tech: ["Vue", "Firebase"],
+      repo: "https://github.com/...",
+      demo: "https://...",
+    },
+    {
+      id: "web_app",
+      slug: "web-app",
+      title: "Aplicación web",
+      image: "/assets/projects/web-app.jpg",
+      tech: ["React", "Node", "MongoDB"],
+      repo: "https://github.com/...",
+      demo: "https://...",
+    },
+    {
+      id: "mobile_app",
+      slug: "mobile-app",
+      title: "Aplicación móvil",
+      image: "/assets/projects/mobile-app.jpg",
+      tech: ["React Native", "Node", "MongoDB"],
+      repo: "https://github.com/...",
+      demo: "https://...",
+    },
+];

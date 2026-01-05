@@ -1,24 +1,34 @@
 // src/pages/ProjectsPage/ProjectsPage.jsx
-import { projects } from '../../data/projects';
 import { useTranslation } from "react-i18next";
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import styles from './ProjectsPage.module.scss';
+import { projectsData } from "../../data/projectsData";
+
+import AnimatedGroup from "../../components/Animation/AnimatedGroup";
+import AnimatedItem from "../../components/Animation/AnimatedItem";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
+
+import styles from "./ProjectsPage.module.scss";
 
 export default function ProjectsPage() {
   const { t } = useTranslation("projects");
-  return (
-    <section className={styles.page}>
-      <h2 className={styles.title}>
-        {t("title")}
-        </h2>
-        <p>{t("description")}
-          <br />
-        </p>
 
-      <div className={styles.grid}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+return (
+    <section className={styles.projects}>
+      <div className={styles.inner}>
+        <AnimatedItem as="h2">{t("page_title")}</AnimatedItem>
+
+        <AnimatedGroup className={styles.grid}>
+          {projectsData.map((project) => (
+            <AnimatedItem key={project.id}>
+              <ProjectCard
+                title={project.title}
+                description={t(`projects.${project.id}.description`)}
+                image={project.image}
+                tech={project.tech}
+                slug={project.slug}
+              />
+            </AnimatedItem>
+          ))}
+        </AnimatedGroup>
       </div>
     </section>
   );

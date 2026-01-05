@@ -1,4 +1,20 @@
 {
-"title": "Projects",
-"description": "Here are some of my highlighted projects."
+"page_title": "Projects",
+  "projects": {
+    "edu_platform": {
+      "description": "Educational platform based on gamification and active learning."
+    },
+    "portfolio": {
+      "description": "Personal portfolio developed with React and SCSS."
+    },
+    "ecommerce_site": {
+      "description": "E-commerce website with shopping cart and payment gateway."
+    },
+    "web_app": {
+      "description": "Web application for task management and productivity."
+    },
+    "mobile_app": {
+      "description": "Mobile application for blogs with WYSIWYG editor and comment system."
+    }
+  }
 }

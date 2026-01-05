@@ -1,24 +1,36 @@
-import { Link } from 'react-router-dom';
-import styles from './ProjectCard.module.scss';
+import { Link } from "react-router-dom";
+import styles from "./ProjectCard.module.scss";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  tech,
+  slug,
+}) {
   return (
-    <article className={styles.card}>
-      <h3 className={styles.title}>{project.title}</h3>
-      <p className={styles.description}>{project.description}</p>
+    <Link
+      to={`/projects/${slug}`}
+      className={styles.card}
+      aria-label={`Ver detalles del proyecto ${title}`}
+    >
+      <img src={image} alt={title} loading="lazy" />
 
-      <ul className={styles.techList}>
-        {project.technologies.map((tech) => (
-          <li key={tech}>{tech}</li>
-        ))}
-      </ul>
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
 
-      <Link
-        to={`/projects/${project.slug}`}
-        className={styles.link}
-      >
-        Ver proyecto →
-      </Link>
-    </article>
+        <ul className={styles.techList}>
+          {tech.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <span className={styles.cta}>→ Ver proyecto </span>
+      </div>
+    </Link>
   );
 }
+
+
