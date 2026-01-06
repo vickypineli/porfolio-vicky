@@ -1,0 +1,47 @@
+//src/components/TechFilter/TechFilter,module.scss
+
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--rgb-text), 0.25);
+  background: transparent;
+
+  color: var(--color-text); // 🔥 CLAVE
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent); // 🔥 hover accent
+    transform: translateY(-1px);
+  }
+}
+
+.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg); // contraste correcto
+
+  &:hover {
+    color: var(--color-bg);
+  }
+}
+
+.inactive {
+  opacity: 0.7;
+}
