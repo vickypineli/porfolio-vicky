@@ -2,6 +2,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { skillsData } from "../../data/skillsData";
 
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
@@ -11,10 +12,12 @@ export default function SkillsPage() {
   const { t } = useTranslation("skills");
 
   return (
-    <>
-      {skillsData.map((section) => (
-        <section key={section.section} className={styles[section.section]}>
-          <div className={styles.inner}>
+    <section className={styles.skills}>
+      <div className={styles.inner}>
+        <Breadcrumbs />
+
+        {skillsData.map((section) => (
+          <section key={section.section} className={styles.block}>
             <AnimatedGroup>
               <AnimatedItem as="h2">
                 {t(section.titleKey)}
@@ -40,9 +43,9 @@ export default function SkillsPage() {
                 </AnimatedItem>
               ))}
             </AnimatedGroup>
-          </div>
-        </section>
-      ))}
-    </>
+          </section>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -1,17 +1,21 @@
 // src/pages/ProjectsPage/ProjectsPage.jsx
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
+import { useBreadcrumbsFromRoute } from "../../hooks/useBreadcrumbsFromRoute";
 
 import { projectsData } from "../../data/projectsData";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
+import Breadcrumbs   from "../../components/Breadcrumbs/Breadcrumbs";
 
 import styles from "./ProjectsPage.module.scss";
 
 export default function ProjectsPage() {
   const { t } = useTranslation("projects");
+  const breadcrumbs = useBreadcrumbsFromRoute();
   const [searchParams, setSearchParams] = useSearchParams();
+
 
   // leer filtros desde URL
   const techParam = searchParams.get("tech");
@@ -47,6 +51,8 @@ export default function ProjectsPage() {
   return (
     <section className={styles.projects}>
       <div className={styles.inner}>
+        <Breadcrumbs items={breadcrumbs} />
+
         <AnimatedItem as="h2">{t("page_title")}</AnimatedItem>
 
         {/* FILTRO */}
@@ -77,7 +83,7 @@ export default function ProjectsPage() {
         {/* GRID */}
         <AnimatedGroup key={animationKey} className={styles.grid} >
           {filteredProjects.map((project) => (
-            <AnimatedItem key={project.id}>
+            <AnimatedItem as="div" key={project.id}>
               <ProjectCard {...project} />
             </AnimatedItem>
           ))}

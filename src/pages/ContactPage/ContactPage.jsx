@@ -1,5 +1,16 @@
-import React from "react";
+// src/pages/ContactPage/ContactPage.jsx
 
-export default function contactPage() {
-    return <div>ContactPage</div>;
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+
+
+export default function ContactPage() {
+    return (
+        <div>
+            <hr />
+            <hr />
+            <hr />
+            <Breadcrumbs />
+            <h1>ContactPage</h1>
+        </div>
+    );
 }

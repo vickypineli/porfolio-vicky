@@ -1,42 +1,51 @@
-//src/pages/SkillsPage/SkillsPage.module.scss
-
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
 .skills {
   padding: 4rem 1.5rem;
-  margin: 100px auto 0 auto;
-}
-.tools {
-  padding: 4rem 1.5rem;
-  margin: 0 auto 0 auto;
+  margin: 100px auto;
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
 }
 
-.subtitle {
-  margin-top: 2rem;
+/* BLOQUE DE SKILLS / TOOLS */
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* TEXTO */
+.block p {
+  max-width: 70ch;
+  opacity: 0.9;
 }
 
 strong {
   color: var(--color-accent);
 }
 
-/* GRID DE SKILLS */
+/* GRID DE TARJETAS */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  justify-content: center;
-  
+
   @include respond(md) {
     grid-template-columns: repeat(4, 1fr);
   }
+}
 
+/* MÓVIL */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

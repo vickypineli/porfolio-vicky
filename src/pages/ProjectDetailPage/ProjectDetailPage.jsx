@@ -2,7 +2,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { projectsData } from "../../data/projectsData";
+import { useBreadcrumbsFromRoute } from "../../hooks/useBreadcrumbsFromRoute";
 
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
 
@@ -11,6 +13,7 @@ import styles from "./ProjectDetailPage.module.scss";
 export default function ProjectDetailPage() {
   const { slug } = useParams();
   const { t } = useTranslation("projects");
+  const breadcrumbs = useBreadcrumbsFromRoute();
 
   const project = projectsData.find((p) => p.slug === slug);
 
@@ -28,10 +31,13 @@ export default function ProjectDetailPage() {
   return (
     <section className={styles.page}>
       <div className={styles.inner}>
+
+        <Breadcrumbs items={breadcrumbs} />
+
         <AnimatedGroup>
           <AnimatedItem as="h1">{project.title}</AnimatedItem>
 
-          <AnimatedItem as="p" className={styles.description}>
+          <AnimatedItem as="div" className={styles.description}>
             {t(`projects.${project.id}.description`)}
           </AnimatedItem>
         </AnimatedGroup>
@@ -59,31 +65,35 @@ export default function ProjectDetailPage() {
 
         {/* Acciones */}
         <AnimatedGroup className={styles.actions}>
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.primaryBtn}
-            >
-              {t("buttons.demo")}
-            </a>
-          )}
+          <div className={styles.buttonsWrapper}>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.primaryBtn}
+              >
+                {t("buttons.demo")}
+              </a>
+            )}
 
-          {project.repo && (
-            <a
-              href={project.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondaryBtn}
-            >
-              {t("buttons.code")}
-            </a>
-          )}
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.secondaryBtn}
+              >
+                {t("buttons.code")}
+              </a>
+            )}
+          </div>
+          <div className={styles.backWrapper}>
+            <Link to="/projects" className={styles.back}>
+              ← {t("buttons.back")}
+            </Link> 
+          </div>
 
-          <Link to="/projects" className={styles.back}>
-            ← {t("buttons.back")}
-          </Link>
         </AnimatedGroup>
       </div>
     </section>

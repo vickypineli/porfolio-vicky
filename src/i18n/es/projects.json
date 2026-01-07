@@ -1,7 +1,11 @@
 {
   "page_title": "Proyectos",
   "technologies": "Technologias",
-    "buttons": {
+  "breadcrumbs": {
+    "home": "Inicio",
+    "projects": "Proyectos"
+  },
+  "buttons": {
     "demo": "Ver demo",
     "code": "Ver código",
     "back": "Volver a proyectos"

@@ -1,7 +1,11 @@
 {
   "page_title": "Proiektuak",
   "technologies": "Teknologiak",
-    "buttons": {
+  "breadcrumbs": {
+    "home": "Hasiera",
+    "projects": "Proiektuak"
+  },
+  "buttons": {
     "demo": "Demoa ikusi",
     "code": "Kodea ikusi",
     "back": "Proiektuetara itzuli"

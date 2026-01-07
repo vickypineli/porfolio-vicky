@@ -27,7 +27,7 @@ export default function ProjectCard({
         </ul>
 
         {/* CTA */}
-        <span className={styles.cta}>→ Ver proyecto </span>
+        <span className={styles.cta}>← Ver proyecto </span>
       </div>
     </Link>
   );

@@ -52,8 +52,14 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+.buttonsWrapper {
+  width: 30%;
+  display: flex;
+  gap: 1rem;
+}
 
 .primaryBtn {
+  margin: 0 1rem;
   padding: 0.6rem 1.4rem;
   border-radius: 10px;
   background: var(--color-accent);
@@ -82,13 +88,21 @@
   }
 }
 
+.backWrapper {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 .back {
-  align-self: flex-start;
+  align-self: center;
   color: var(--color-text);
   text-decoration: none;
   opacity: 0.8;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.6;
+    color: var(--color-accent)
   }
 }

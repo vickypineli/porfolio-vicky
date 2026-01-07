@@ -1,7 +1,8 @@
 {
-"title": "Contacto",
-"name": "Nombre",
-"email": "Correo",
-"message": "Mensaje",
-"send": "Enviar"
+"page_title": "Contact",
+  "title": "Contact",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "send": "Send"
 }
