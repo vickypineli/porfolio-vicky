@@ -13,14 +13,14 @@ export default function ProjectsPage() {
   const { t } = useTranslation("projects");
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // ⬇️ leer filtros desde URL
+  // leer filtros desde URL
   const techParam = searchParams.get("tech");
   const activeTechs = techParam ? techParam.split(",") : [];
 
   // Clave de animacion para reiniciar al cambiar filtros
   const animationKey = activeTechs.join("-") || "all";
 
-  // ⬇️ toggle múltiple
+  // toggle múltiple
   const toggleTech = (tech) => {
     const next = activeTechs.includes(tech)
       ? activeTechs.filter((t) => t !== tech)
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
     );
   };
 
-  // ⬇️ filtrar proyectos
+  // filtrar proyectos
   const filteredProjects =
     activeTechs.length === 0
       ? projectsData
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
           activeTechs.every((t) => project.tech.includes(t))
         );
 
-  // ⬇️ techs únicas
+  // techs únicas
   const allTechs = [
     ...new Set(projectsData.flatMap((p) => p.tech)),
   ];

@@ -1,5 +1,15 @@
 {
-"page_title": "Projects",
+  "page_title": "Projects",
+  "technologies": "Technologies",
+    "buttons": {
+    "demo": "View demo",
+    "code": "View code",
+    "back": "Back to projects"
+  },
+  "not_found": {
+    "title": "Project not found",
+    "back": "Back to projects"
+  },
   "projects": {
     "edu_platform": {
       "description": "Educational platform based on gamification and active learning."

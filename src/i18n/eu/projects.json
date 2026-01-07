@@ -1,5 +1,15 @@
 {
-"page_title": "Proiektuak",
+  "page_title": "Proiektuak",
+  "technologies": "Teknologiak",
+    "buttons": {
+    "demo": "Demoa ikusi",
+    "code": "Kodea ikusi",
+    "back": "Proiektuetara itzuli"
+  },
+  "not_found": {
+    "title": "Proiektua ez da aurkitu",
+    "back": "Proiektuetara itzuli"
+  },
   "projects": {
     "edu_platform": {
       "description": "Gamifikazioa eta jarduerazko ikasketa oinarritutako plataforman."

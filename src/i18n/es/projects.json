@@ -1,5 +1,15 @@
 {
   "page_title": "Proyectos",
+  "technologies": "Technologias",
+    "buttons": {
+    "demo": "Ver demo",
+    "code": "Ver código",
+    "back": "Volver a proyectos"
+  },
+  "not_found": {
+    "title": "Proyecto no encontrado",
+    "back": "Volver a proyectos"
+  },
   "projects": {
     "edu_platform": {
       "description": "Plataforma educativa basada en gamificación y aprendizaje activo."

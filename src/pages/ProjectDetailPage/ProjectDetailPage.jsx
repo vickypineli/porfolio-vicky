@@ -1,10 +1,11 @@
 // src/pages/ProjectDetailPage/ProjectDetailPage.jsx
-
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { projectsData } from "../../data/projectsData";
 
+import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
+
 import styles from "./ProjectDetailPage.module.scss";
 
 export default function ProjectDetailPage() {
@@ -16,19 +17,48 @@ export default function ProjectDetailPage() {
   if (!project) {
     return (
       <section className={styles.page}>
-        <h1>Proyecto no encontrado</h1>
-        <Link to="/projects">← Volver a proyectos</Link>
+        <h1>{t("not_found.title")}</h1>
+        <Link to="/projects" className={styles.back}>
+          ← {t("not_found.back")}
+        </Link>
       </section>
     );
   }
 
   return (
     <section className={styles.page}>
-      <AnimatedItem as="header" className={styles.header}>
-        <h1>{project.title}</h1>
-        <p>{t(`projects.${project.id}.description`)}</p>
+      <div className={styles.inner}>
+        <AnimatedGroup>
+          <AnimatedItem as="h1">{project.title}</AnimatedItem>
 
-        <div className={styles.actions}>
+          <AnimatedItem as="p" className={styles.description}>
+            {t(`projects.${project.id}.description`)}
+          </AnimatedItem>
+        </AnimatedGroup>
+
+        {/* Imagen */}
+        {project.image && (
+          <AnimatedItem className={styles.imageWrapper}>
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+            />
+          </AnimatedItem>
+        )}
+
+        {/* Tecnologías */}
+        <AnimatedGroup>
+          <AnimatedItem as="h3">{t("technologies")}</AnimatedItem>
+          <ul className={styles.techList}>
+            {project.tech.map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
+        </AnimatedGroup>
+
+        {/* Acciones */}
+        <AnimatedGroup className={styles.actions}>
           {project.demo && (
             <a
               href={project.demo}
@@ -36,7 +66,7 @@ export default function ProjectDetailPage() {
               rel="noopener noreferrer"
               className={styles.primaryBtn}
             >
-              Ver demo
+              {t("buttons.demo")}
             </a>
           )}
 
@@ -47,34 +77,17 @@ export default function ProjectDetailPage() {
               rel="noopener noreferrer"
               className={styles.secondaryBtn}
             >
-              GitHub
+              {t("buttons.code")}
             </a>
           )}
 
           <Link to="/projects" className={styles.back}>
-            ← Volver
+            ← {t("buttons.back")}
           </Link>
-        </div>
-      </AnimatedItem>
-
-      <AnimatedItem>
-        <img
-          src={project.image}
-          alt={project.title}
-          className={styles.image}
-          loading="lazy"
-        />
-      </AnimatedItem>
-
-      <AnimatedItem>
-        <h3>Tecnologías</h3>
-        <ul className={styles.techList}>
-          {project.tech.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
-      </AnimatedItem>
+        </AnimatedGroup>
+      </div>
     </section>
   );
 }
+
 
