@@ -2,26 +2,43 @@
 
 import { Link } from "react-router-dom";
 //import AnimatedItem from "../Animation/AnimatedItem";
-import styles from "./Breadcrumbs.module.scss";
 import { useBreadcrumbsFromRoute } from "../../hooks/useBreadcrumbsFromRoute";
+import { FiHome } from "react-icons/fi";
+
+import styles from "./Breadcrumbs.module.scss";
+
 
 export default function Breadcrumbs() {
   const crumbs = useBreadcrumbsFromRoute();
 
   return (
     <nav aria-label="Breadcrumb" className={styles.breadcrumbs}>
-      <ol>
+<ol>
         {crumbs.map((crumb, index) => {
-          const isLast = crumb.current || index === crumbs.length - 1;
+          const isCurrent = crumb.current;
+          const isHome = index === 0;
 
           return (
-            <li key={index}>
-              {isLast ? (
-                <span aria-current="page" className={styles.current}>
+            <li
+              key={index}
+              className={styles.item}
+              style={{ "--i": index }}
+            >
+              {isCurrent ? (
+                <span
+                  aria-current="page"
+                  className={styles.current}
+                >
                   {crumb.label}
                 </span>
               ) : (
-                <Link to={crumb.to}>{crumb.label}</Link>
+                <Link
+                  to={crumb.to}
+                  aria-label={isHome ? "Inicio" : undefined}
+                  className={styles.link}
+                >
+                  {isHome ? <FiHome size={16} /> : crumb.label}
+                </Link>
               )}
             </li>
           );
