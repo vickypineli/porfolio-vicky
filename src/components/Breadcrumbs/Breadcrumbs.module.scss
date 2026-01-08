@@ -1,11 +1,10 @@
 /* src/components/Breadcrumbs/Breadcrumbs.module.scss */
 
-.breadcrumbs {
+.nav {
   margin-bottom: 2rem;
-  font-size: 0.85rem;
 }
 
-ol {
+.list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -17,42 +16,36 @@ ol {
 .item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-
-  /* Animación */
-  opacity: 0;
-  transform: translateY(6px);
-  animation: breadcrumbFade 0.4s ease forwards;
-  animation-delay: calc(var(--i) * 0.06s);
 }
 
-.item::after {
-  content: "/";
-  margin-left: 0.5rem;
-  opacity: 0.3;
-}
-
-.item:last-child::after {
-  content: "";
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.4;
 }
 
 .link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
   color: var(--color-text);
   text-decoration: none;
-  transition: color 0.2s ease;
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  transition: color 0.2s ease, background 0.2s ease;
 
   &:hover {
     color: var(--color-accent);
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    background: rgba(var(--rgb-accent), 0.15);
+  }
 }
 
 .current {
+  font-weight: 600;
   color: var(--color-accent);
-  font-weight: 500;
 }
+
 
 @keyframes breadcrumbFade {
   to {

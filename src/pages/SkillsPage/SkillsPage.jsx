@@ -6,6 +6,8 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
+import GitHubCalendarSection from "../../components/GitHubCalendarSection/GitHubCalendarSection";
+
 import styles from "./SkillsPage.module.scss";
 
 export default function SkillsPage() {
@@ -45,6 +47,7 @@ export default function SkillsPage() {
             </AnimatedGroup>
           </section>
         ))}
+        <GitHubCalendarSection />
       </div>
     </section>
   );

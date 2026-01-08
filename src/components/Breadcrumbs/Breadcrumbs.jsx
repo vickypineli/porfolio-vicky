@@ -1,45 +1,38 @@
 // src/components/Breadcrumbs/Breadcrumbs.jsx
 
 import { Link } from "react-router-dom";
-//import AnimatedItem from "../Animation/AnimatedItem";
 import { useBreadcrumbsFromRoute } from "../../hooks/useBreadcrumbsFromRoute";
-import { FiHome } from "react-icons/fi";
-
+import { HiHome } from "react-icons/hi";
 import styles from "./Breadcrumbs.module.scss";
-
 
 export default function Breadcrumbs() {
   const crumbs = useBreadcrumbsFromRoute();
 
   return (
-    <nav aria-label="Breadcrumb" className={styles.breadcrumbs}>
-<ol>
+    <nav aria-label="Breadcrumb" className={styles.nav}>
+      <ol className={styles.list}>
         {crumbs.map((crumb, index) => {
-          const isCurrent = crumb.current;
-          const isHome = index === 0;
+          const isLast = crumb.current;
 
           return (
-            <li
-              key={index}
-              className={styles.item}
-              style={{ "--i": index }}
-            >
-              {isCurrent ? (
+            <li key={index} className={styles.item}>
+              {crumb.to && !isLast ? (
+                <Link
+                  to={crumb.to}
+                  className={styles.link}
+                >
+                  {index === 0 ? <HiHome aria-hidden /> : crumb.label}
+                </Link>
+              ) : (
                 <span
-                  aria-current="page"
                   className={styles.current}
+                  aria-current="page"
                 >
                   {crumb.label}
                 </span>
-              ) : (
-                <Link
-                  to={crumb.to}
-                  aria-label={isHome ? "Inicio" : undefined}
-                  className={styles.link}
-                >
-                  {isHome ? <FiHome size={16} /> : crumb.label}
-                </Link>
               )}
+
+              {!isLast && <span className={styles.separator}>/</span>}
             </li>
           );
         })}
@@ -47,4 +40,3 @@ export default function Breadcrumbs() {
     </nav>
   );
 }
-
