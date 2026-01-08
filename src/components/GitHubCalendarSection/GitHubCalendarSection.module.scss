@@ -5,13 +5,20 @@
 
   h3 {
     margin-bottom: 1.5rem;
-  }
-
-  :global(.react-github-calendar) {
-    width: 100%;
-  }
-
-  :global(.react-github-calendar svg) {
-    max-width: 1200px;
+    //text-align: center;
   }
 }
+
+.calendarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* estilos globales del SVG */
+:global(.react-github-calendar) {
+  max-width: 1200px;
+}
+
+/* ⚠️ NO tocar pointer-events o se rompe el tooltip */
+
