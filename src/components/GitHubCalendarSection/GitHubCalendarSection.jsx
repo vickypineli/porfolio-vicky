@@ -1,4 +1,5 @@
 //src/conponents/GitHubCalendarSection/GitHubCalendarSection.jsx
+
 import GitHubCalendar from "react-github-calendar";
 import { useThemeColors } from "../../hooks/useThemeColors";
 import AnimatedGroup from "../Animation/AnimatedGroup";
@@ -29,7 +30,6 @@ export default function GitHubCalendarSection() {
           ],
         };
 
-
   return (
     <section className={styles.calendar}>
       <AnimatedGroup>
@@ -51,7 +51,6 @@ export default function GitHubCalendarSection() {
               showMonthLabels
               colorScheme="light"
               theme={calendarTheme}
-   
             />
           </div>
         </AnimatedItem>
