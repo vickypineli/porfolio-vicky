@@ -1,7 +1,14 @@
 {
-"title": "Harremanetan",
-"name": "Izena",
-"email": "Posta elektronikoa",
-"message": "Mezua",
-"send": "Bidali"
+  "page_title": "Kontaktua",
+  "intro": "<strong>Nirekin harremanetan jarri</strong> nahi baduzu edo mezu bat bidali, idatzi lasai.",
+  "form_name": "Izena",
+  "form_email": "Emaila",
+  "form_message": "Mezua",
+  "form_submit": "Mezua bidali",
+  "form_subject": "{{name}}-ren mezua",
+  "social_title": "Sareak",
+  "form_sending": "Bidaltzen...",
+  "form_success": "Mezua behar bezala bidali da. Laster erantzungo dizut.",
+  "form_error": "Errore bat gertatu da. Saiatu berriro geroago.",
+  "form_company": "Empresa"
 }

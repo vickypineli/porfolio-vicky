@@ -1,8 +1,15 @@
 {
-"page_title": "Contact",
-  "title": "Contact",
-  "name": "Name",
-  "email": "Email",
-  "message": "Message",
-  "send": "Send"
+  "page_title": "Contact",
+  "intro": "If you want to <strong>get in touch</strong>, collaborate or just say hello, write to me.",
+  "form_name": "Name",
+  "form_email": "Email",
+  "form_message": "Message",
+  "form_submit": "Send message",
+  "form_subject": "Message from {{name}}",
+  "social_title": "Social",
+  "form_sending": "Sending...",
+  "form_success": "Message sent successfully. Thank you for your message. I’ll get back to you soon.",
+  "form_error": "Something went wrong. Please try again later.",
+  "form_company": "Empresa"
 }
+

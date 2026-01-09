@@ -1,0 +1,59 @@
+// src/pages/ContactPage/ContactPage.module.scss
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.contact {
+  padding: 5rem 1.5rem;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+strong {
+  color: var(--color-accent);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h3 {
+    margin: 0;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 1rem;
+}

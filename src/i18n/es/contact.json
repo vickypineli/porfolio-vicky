@@ -1,8 +1,14 @@
 {
-"page_title": "Contacto",
-"title": "Contacto",
-"name": "Nombre",
-"email": "Correo",
-"message": "Mensaje",
-"send": "Enviar"
+  "page_title": "Contacto",
+  "intro": "Si quieres <strong>contactar conmigo</strong>, colaborar o simplemente saludar, escríbeme.",
+  "form_name": "Nombre",
+  "form_email": "Email",
+  "form_message": "Mensaje",
+  "form_submit": "Enviar mensaje",
+  "form_subject": "Mensaje de {{name}}",
+  "social_title": "Redes",
+  "form_sending": "Enviando...",
+  "form_success": "Mensaje enviado correctamente. Muchas gracias por tu mensaje. Te responderé pronto.",
+  "form_error": "Ha ocurrido un error. Inténtalo más tarde.",
+  "form_company": "Empresa"
 }

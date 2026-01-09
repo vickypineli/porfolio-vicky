@@ -28,6 +28,7 @@
     "scrum": "Agile methodologies",
     "canva": "Graphic design",
     "raspberrypi": "Educational hardware projects",
-    "figma": "Graphic design and prototyping"
+    "figma": "Graphic design and prototyping",
+    "codepen": "Frontend editor and testbed"
   }
 }

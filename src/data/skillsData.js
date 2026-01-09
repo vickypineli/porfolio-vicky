@@ -27,6 +27,8 @@ import {
 
 import { CgTrello } from "react-icons/cg";
 import { VscVscodeInsiders } from "react-icons/vsc";
+import { FaCodepen } from "react-icons/fa";
+
 
 export const skillsData = [
   {
@@ -64,6 +66,7 @@ export const skillsData = [
       { id: "canva", icon: SiCanva, title: "Canva" },
       { id: "raspberrypi", icon: SiRaspberrypi, title: "Raspberry Pi" },
       { id: "figma", icon: SiFigma, title: "Figma" },
+      { id: "codepen", icon: FaCodepen, title: "Codepen" },
     ],
   },
 ];
