@@ -10,5 +10,13 @@
   "form_sending": "Bidaltzen...",
   "form_success": "Mezua behar bezala bidali da. Laster erantzungo dizut.",
   "form_error": "Errore bat gertatu da. Saiatu berriro geroago.",
-  "form_company": "Empresa"
+  "form_company": "Empresa",
+    "errors": {
+    "name_required": "Izena derrigorrezkoa da",
+    "email_required": "Emaila derrigorrezkoa da",
+    "email_invalid": "Emaila ez da zuzena",
+    "message_required": "Mezua derrigorrezkoa da"
+    }
+
+
 }

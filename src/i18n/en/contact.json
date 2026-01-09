@@ -10,6 +10,13 @@
   "form_sending": "Sending...",
   "form_success": "Message sent successfully. Thank you for your message. I’ll get back to you soon.",
   "form_error": "Something went wrong. Please try again later.",
-  "form_company": "Empresa"
+  "form_company": "Empresa",
+  "errors": {
+    "name_required": "Name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Email is not valid",
+    "message_required": "Message is required"
+  }
+
 }
 

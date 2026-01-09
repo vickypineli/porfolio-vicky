@@ -10,5 +10,12 @@
   "form_sending": "Enviando...",
   "form_success": "Mensaje enviado correctamente. Muchas gracias por tu mensaje. Te responderé pronto.",
   "form_error": "Ha ocurrido un error. Inténtalo más tarde.",
-  "form_company": "Empresa"
+  "form_company": "Empresa",
+  "errors": {
+    "name_required": "El nombre es obligatorio",
+    "email_required": "El email es obligatorio",
+    "email_invalid": "El email no es válido",
+    "message_required": "El mensaje es obligatorio"
+    }
+
 }
