@@ -1,21 +1,36 @@
 {
-  "page_title": "Contacto",
+  "title": "Contáctame",
+  "page_title": "Contáctame",
   "intro": "Si quieres <strong>contactar conmigo</strong>, colaborar o simplemente saludar, escríbeme.",
   "form_name": "Nombre",
   "form_email": "Email",
   "form_message": "Mensaje",
-  "form_submit": "Enviar mensaje",
-  "form_subject": "Mensaje de {{name}}",
-  "social_title": "Redes",
+  "form_company": "Empresa (no rellenar)",
+  "form_submit": "Enviar",
   "form_sending": "Enviando...",
-  "form_success": "Mensaje enviado correctamente. Muchas gracias por tu mensaje. Te responderé pronto.",
-  "form_error": "Ha ocurrido un error. Inténtalo más tarde.",
-  "form_company": "Empresa",
+  "form_success": "¡Mensaje enviado con éxito!",
+  "form_error": "Error al enviar, intenta de nuevo",
   "errors": {
     "name_required": "El nombre es obligatorio",
     "email_required": "El email es obligatorio",
-    "email_invalid": "El email no es válido",
+    "email_invalid": "Email no válido",
     "message_required": "El mensaje es obligatorio"
-    }
-
+  },
+  "contact_info": {
+    "title": "Información de contacto",
+    "city": "Ciudad",
+    "city_value": "Bilbao, Euskadi",
+    "email": "info@vickydev.com",
+    "telegram": "Telegram",
+    "telegram_link": "https://t.me/vickydev",
+    "copyright": "Todos los derechos reservados"
+  },
+  "socials": {
+    "github": "https://github.com/vicky",
+    "linkedin": "https://www.linkedin.com/in/vickypineroelices",
+    "telegram": "https://t.me/vickydev",
+    "codepen": "https://codepen.io/vicky",
+    "bluesky":"https://bsky.app/profile/kanduladev.bsky.social"
+  }
 }
+

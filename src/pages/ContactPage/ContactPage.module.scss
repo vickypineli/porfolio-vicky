@@ -1,47 +1,72 @@
 // src/pages/ContactPage/ContactPage.module.scss
+
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.contact {
-  padding: 5rem 1.5rem;
+.contactPage {
+  padding: 4rem 1.5rem;
+  margin: 100px auto;
 }
 
 .inner {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
 }
 
-strong {
-  color: var(--color-accent);
-}
-
-.content {
+.contentWrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1fr ;
+  gap: 4rem;
+  align-items: center;
 
   @include respond(md) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
 }
 
-.block {
+/* Formulario */
+.formWrapper {
+
+  margin: 0;
+  padding: 1rem 0;
+}
+
+
+/* INFO */
+.contactWrapper{
+  max-width: 400px;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
+}
 
-  h3 {
-    margin: 0;
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  line-height: 3;
+  color: var(--color-text);
+  font-size: 1rem;
+
+  svg {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    min-width: 24px;
   }
 
-  a {
+  a, span {
     color: var(--color-text);
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.2rem;
 
     &:hover {
       color: var(--color-accent);
@@ -49,11 +74,49 @@ strong {
   }
 }
 
-.socials {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  gap: 1rem;
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* SOCIALS */
+.socialMediaList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  list-style: none;
+ 
+
+  li {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--color-accent);
+      transform: scale(1.1);
+    }
+
+    a {
+      color: var(--color-text);
+      font-size: 2rem;
+    }
+
+    &:hover a {
+      color: var(--color-bg);
+    }
+  }
+}
+
+.copyright {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color:rgba(255, 255, 255, 0.2);
+}
+

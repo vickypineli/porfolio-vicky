@@ -1,22 +1,35 @@
 {
   "page_title": "Kontaktua",
   "intro": "<strong>Nirekin harremanetan jarri</strong> nahi baduzu edo mezu bat bidali, idatzi lasai.",
+  "title": "Contáctame",
   "form_name": "Izena",
   "form_email": "Emaila",
   "form_message": "Mezua",
+  "form_company": "Empresa(ez gertatu)",
   "form_submit": "Mezua bidali",
-  "form_subject": "{{name}}-ren mezua",
-  "social_title": "Sareak",
-  "form_sending": "Bidaltzen...",
-  "form_success": "Mezua behar bezala bidali da. Laster erantzungo dizut.",
-  "form_error": "Errore bat gertatu da. Saiatu berriro geroago.",
-  "form_company": "Empresa",
-    "errors": {
-    "name_required": "Izena derrigorrezkoa da",
-    "email_required": "Emaila derrigorrezkoa da",
-    "email_invalid": "Emaila ez da zuzena",
-    "message_required": "Mezua derrigorrezkoa da"
-    }
-
-
+  "form_sending": "Enviando...",
+  "form_success": "¡Mensaje enviado con éxito!",
+  "form_error": "Error al enviar, intenta de nuevo",
+  "errors": {
+    "name_required": "El nombre es obligatorio",
+    "email_required": "El email es obligatorio",
+    "email_invalid": "Email no válido",
+    "message_required": "El mensaje es obligatorio"
+  },
+  "contact_info": {
+    "title": "Información de contacto",
+    "city": "Ciudad",
+    "city_value": "Bilbao",
+    "email": "info@vickydev.com",
+    "telegram": "Telegram",
+    "telegram_link": "https://t.me/vickydev",
+    "copyright": "Todos los derechos reservados"
+  },
+  "socials": {
+    "github": "https://github.com/vicky",
+    "linkedin": "https://www.linkedin.com/in/vickypineroelices",
+    "telegram": "https://t.me/vickydev",
+    "codepen": "https://codepen.io/vicky",
+    "bluesky":"https://bsky.app/profile/kanduladev.bsky.social"
+  }
 }

@@ -1,22 +1,36 @@
 {
   "page_title": "Contact",
   "intro": "If you want to <strong>get in touch</strong>, collaborate or just say hello, write to me.",
+  "title": "Contact",
   "form_name": "Name",
   "form_email": "Email",
   "form_message": "Message",
+  "form_company": "Empresa",
   "form_submit": "Send message",
-  "form_subject": "Message from {{name}}",
-  "social_title": "Social",
   "form_sending": "Sending...",
   "form_success": "Message sent successfully. Thank you for your message. I’ll get back to you soon.",
   "form_error": "Something went wrong. Please try again later.",
-  "form_company": "Empresa",
   "errors": {
     "name_required": "Name is required",
     "email_required": "Email is required",
     "email_invalid": "Email is not valid",
     "message_required": "Message is required"
+  },
+  "contact_info": {
+    "title": "Contact information",
+    "city": "City",
+    "city_value": "Bilbao",
+    "email": "info@vickydev.com",
+    "telegram": "Telegram",
+    "telegram_link": "https://t.me/vickydev",
+    "copyright": "All rights reserved"
+  },
+  "socials": {
+    "github": "https://github.com/vicky",
+    "linkedin": "https://www.linkedin.com/in/vickypineroelices",
+    "telegram": "https://t.me/vickydev",
+    "codepen": "https://codepen.io/vicky",
+    "bluesky":"https://bsky.app/profile/kanduladev.bsky.social"
   }
-
 }
 

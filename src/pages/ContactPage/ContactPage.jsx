@@ -1,95 +1,107 @@
 // src/pages/ContactPage/ContactPage.jsx
-
 import { useTranslation, Trans } from "react-i18next";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import ContactForm from "../../components/ContactForm/ContactForm";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
-import ContactForm from "../../components/ContactForm/ContactForm";
-
 import styles from "./ContactPage.module.scss";
 
+import { FaMapMarkerAlt, FaEnvelope, FaTelegramPlane, FaGithub, FaLinkedin, FaInstagram, FaCodepen } from "react-icons/fa";
+import { RiBlueskyLine } from "react-icons/ri";
+
 export default function ContactPage() {
-    const {t} = useTranslation("contact");
-    
+  const { t } = useTranslation("contact");
+
   return (
-    <section className={styles.contact}>
+    <section className={styles.contactPage}>
       <div className={styles.inner}>
         <Breadcrumbs />
-
-        <AnimatedGroup>
-          <AnimatedItem as="h1">
-            {t("page_title")}
-          </AnimatedItem>
-
-          <AnimatedItem as="p">
-            <Trans
-              t={t}
-              i18nKey="intro"
-              components={{ strong: <strong /> }}
-            />
-          </AnimatedItem>
-        </AnimatedGroup>
-
-        <AnimatedGroup className={styles.content}>
-          <AnimatedItem as="div" className={styles.block}>
-            {/* <h3>{t("contact_title")}</h3> */}
+          <AnimatedGroup className={styles.titleWrapper} key={styles.image} stagger={0.15}>
+            <AnimatedItem as="h1">{t("title")}</AnimatedItem>
+            <AnimatedItem as="p">
+              <Trans
+                t={t}
+                i18nKey={"intro"}
+                components={{ strong: <strong /> }}
+              />
+            </AnimatedItem>
+          </AnimatedGroup>
+        <div className={styles.contentWrapper}>
+          {/* Formulario */}
+          <AnimatedGroup className={styles.formWrapper}>
             <ContactForm />
-          </AnimatedItem>
+          </AnimatedGroup>
+          
+              {/* INFO + REDES */}
+          <AnimatedGroup className={styles.contactWrapper} key={styles.contact} stagger={0.15}>
+             {/* LISTA DE CONTACTO */}
+            <ul className={styles.contactList}>
+              <AnimatedItem as="li" className={styles.listItem}>
+                <FaMapMarkerAlt />
+                <span>{t("contact_info.city_value")}</span>
+              </AnimatedItem>
 
-          <AnimatedItem as="div" className={styles.block}>
-            <h3>{t("social_title")}</h3>
-            <ul className={styles.socials}>
-              <li>
+              <AnimatedItem as="li" className={styles.listItem}>
+                <FaEnvelope />
+                <a href={`mailto:${t("contact_info.email")}`}>
+                  {t("contact_info.email")}
+                </a>
+              </AnimatedItem>
+
+              <AnimatedItem as="li" className={styles.listItem}>
+                <FaTelegramPlane />
                 <a
-                  href="https://github.com/tuusuario"
+                  href={t("contact_info.telegram_link")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  Telegram
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/tuusuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/tuusuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/tuusuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://codepen.io/mariavictoriapinero"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Codepen
-                </a>
-              </li>
+              </AnimatedItem>
             </ul>
-          </AnimatedItem>
-          <AnimatedItem as="div" className={styles.block}>
-                    <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
-          </AnimatedItem>
-        </AnimatedGroup>
+
+            <AnimatedItem as="hr" />
+
+
+            {/* REDES SOCIALES */}
+            <ul className={styles.socialMediaList}>
+              <AnimatedItem as="li">
+                <a href={t("socials.github")} target="_blank" rel="noreferrer">
+                  <FaGithub />
+                </a>
+              </AnimatedItem>
+
+              <AnimatedItem as="li">
+                <a href={t("socials.linkedin")} target="_blank" rel="noreferrer">
+                  <FaLinkedin />
+                </a>
+              </AnimatedItem>
+
+              <AnimatedItem as="li">
+                <a href={t("socials.instagram")} target="_blank" rel="noreferrer">
+                  <FaInstagram />
+                </a>
+              </AnimatedItem>
+
+              <AnimatedItem as="li">
+                <a href={t("socials.codepen")} target="_blank" rel="noreferrer">
+                  <FaCodepen />
+                </a>
+              </AnimatedItem>
+
+              <AnimatedItem as="li">
+                <a href={t("socials.bluesky")} target="_blank" rel="noreferrer">
+                  <RiBlueskyLine />
+                </a>
+              </AnimatedItem>
+            </ul>
+            <AnimatedItem as="hr" />
+
+            <AnimatedItem as="p" className={styles.copyright}>
+              © {new Date().getFullYear()} {t("contact_info.copyright")}
+            </AnimatedItem>
+          </AnimatedGroup>
+        </div>
       </div>
     </section>
   );
