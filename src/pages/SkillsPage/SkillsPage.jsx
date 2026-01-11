@@ -41,6 +41,7 @@ export default function SkillsPage() {
                     icon={item.icon}
                     title={item.title}
                     description={t(`${section.section}.${item.id}`)}
+                    level={item.level}
                   />
                 </AnimatedItem>
               ))}
