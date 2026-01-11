@@ -23,10 +23,10 @@ export default function GitHubCalendarSection() {
       : {
           light: [
             "#fde2f3",
-            "#f9b3d1",
-            "#f472b6",
-            "#ec4899",
-            "#be185d",
+            "#ff9ded",
+            "#ff27d8",
+            "#ff14d5",
+            "#890071",
           ],
         };
 
