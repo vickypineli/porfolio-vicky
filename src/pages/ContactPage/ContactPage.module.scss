@@ -10,7 +10,14 @@
 
 .inner {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 1rem auto;
+
+}
+.titleWrapper {
+  margin-bottom: 2rem;
+  h1 {
+    margin-bottom: 1rem;
+  }
 }
 
 .contentWrapper {
@@ -27,7 +34,6 @@
 
 /* Formulario */
 .formWrapper {
-
   margin: 0;
   padding: 1rem 0;
 }
@@ -35,12 +41,12 @@
 
 /* INFO */
 .contactWrapper{
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
+  //gap: 0.5rem;
 }
 
 .contactList {

@@ -83,62 +83,67 @@ export default function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit} noValidate aria-live="polite">
       {/* Nombre */}
       <label>
-        {t("form_name")}
+        {submitted && errors.name && (
+          <AnimatedItem as="p" id="error-name" className={styles.error} direction="up">
+            {errors.name}
+          </AnimatedItem>
+        )}
+        {/* {t("form_name")} */}
         <input
           type="text"
           name="name"
           value={form.name}
+          placeholder={t("form_name")}
           onChange={handleChange}
           required
           ref={submitted && errors.name ? firstErrorRef : null}
           aria-invalid={!!(submitted && errors.name)}
           aria-describedby={submitted && errors.name ? "error-name" : undefined}
         />
-        {submitted && errors.name && (
-          <AnimatedItem as="p" id="error-name" className={styles.error} direction="up">
-            {errors.name}
-          </AnimatedItem>
-        )}
+
       </label>
 
       {/* Email */}
       <label>
-        {t("form_email")}
+        {/* {t("form_email")} */}
+        {submitted && errors.email && (
+          <AnimatedItem as="p" id="error-email" className={styles.error} direction="up">
+            {errors.email}
+          </AnimatedItem>
+        )}
         <input
           type="email"
           name="email"
           value={form.email}
+          placeholder={t("form_email")}
           onChange={handleChange}
           required
           ref={submitted && errors.email && !firstErrorRef.current ? firstErrorRef : null}
           aria-invalid={!!(submitted && errors.email)}
           aria-describedby={submitted && errors.email ? "error-email" : undefined}
         />
-        {submitted && errors.email && (
-          <AnimatedItem as="p" id="error-email" className={styles.error} direction="up">
-            {errors.email}
-          </AnimatedItem>
-        )}
+
       </label>
 
       {/* Mensaje */}
       <label>
-        {t("form_message")}
+        {/* {t("form_message")} */}
+        {submitted && errors.message && (
+          <AnimatedItem as="p" id="error-message" className={styles.error} direction="up">
+            {errors.message}
+          </AnimatedItem>
+        )}
         <textarea
           name="message"
           rows="5"
           value={form.message}
+          placeholder={t("form_message")}
           onChange={handleChange}
           required
           ref={submitted && errors.message && !firstErrorRef.current ? firstErrorRef : null}
           aria-invalid={!!(submitted && errors.message)}
           aria-describedby={submitted && errors.message ? "error-message" : undefined}
         />
-        {submitted && errors.message && (
-          <AnimatedItem as="p" id="error-message" className={styles.error} direction="up">
-            {errors.message}
-          </AnimatedItem>
-        )}
       </label>
 
       {/* Honeypot */}
