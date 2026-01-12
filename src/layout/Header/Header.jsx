@@ -48,7 +48,10 @@ export default function Header() {
         <button
           className={`${styles.burger} ${open ? styles.open : ""}`}
           aria-label="Abrir menú"
-          onClick={() => setOpen(!open)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(!open);
+          }}
         >
           <span />
           <span />
@@ -58,20 +61,20 @@ export default function Header() {
 
 
       {/* MENU MOVIL */}
-      <nav className={`${styles.mobileNav} ${open ? styles.open : ""}`}>
-        <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>
+      <nav className={`${styles.mobileNav} ${open ? styles.open : ""}`} onClick={closeMenu}>
+        <NavLink to="/" end className={navLinkClass}>
           {t("home")}
         </NavLink>
-        <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>
+        <NavLink to="/about" className={navLinkClass}>
           {t("about")}
         </NavLink>
-        <NavLink to="/projects" className={navLinkClass} onClick={closeMenu}>
+        <NavLink to="/projects" className={navLinkClass}>
           {t("projects")}
         </NavLink>
-        <NavLink to="/skills" className={navLinkClass} onClick={closeMenu}>
+        <NavLink to="/skills" className={navLinkClass}>
           {t("skills")}
         </NavLink>
-        <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
+        <NavLink to="/contact" className={navLinkClass}>
           {t("contact")}
         </NavLink>
 
