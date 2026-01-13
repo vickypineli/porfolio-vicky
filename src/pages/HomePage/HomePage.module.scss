@@ -19,8 +19,7 @@
 }
 
 .homeInner {
-  display: grid;
-  grid-template-columns: 1fr 420px;
+  display: flex;
   gap: 2.5rem;
   align-items: center;
   width: 100%;
@@ -28,13 +27,17 @@
 }
 
 .homeContent {
+  width: 100%;
+  margin-top: 150px;
+  padding: 0 20px ;
   z-index: 2;
   text-align: left;
+
 }
 
 .homeTitle {
-  //font-family: "Lora", serif;
-  font-size: clamp(2rem, 4rem, 3rem);
+  font-family: "Lora", serif;
+  font-size: clamp(1.5rem, 5rem, 8rem);//valor(mínimo, ideal, máximo)
   margin: 0 0 0.5rem 0;
   color: var(--color-text);
   line-height: 1.05;
@@ -44,16 +47,18 @@
 .homeRole {
   font-family: "Montserrat", sans-serif;
   margin: 0 0 1rem 0;
-  color: var(--color-text);
+  color: var(--color-accent);
   opacity: 0.85;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .homePhrase {
+  background-color: rgba(0, 0, 0, 0.669);
   margin: 0 0 1.25rem 0;
-  color: var(--color-text);
-  max-width: 56ch;
-  opacity: 0.9;
+  color: var(--color-accent);
+  //max-width: 56ch;
+  //opacity: 0.9;
 }
 
 .homeActions {
@@ -70,7 +75,7 @@
   text-decoration: none;
   color: var(--color-accent);
   border-radius: 6px;
-  //transition: background-color 0.25s ease, color 0.25s ease, transform 0.12s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.12s ease;
   background: transparent;
   font-weight: 600;
 
@@ -82,6 +87,26 @@
     border-color: var(--color-text);
     outline: none;
   }
+}
+.lottieContainer {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.lottieIcon {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  color: var(--color-accent);
+    &:hover {
+      color: blue;
+      transform: scale(1.1); // Pequeña interacción al pasar el mouse
+    }
 }
 
 .homePhotoWrapper {

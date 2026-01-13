@@ -62,7 +62,7 @@ export default function Header() {
 
       {/* MENU MOVIL */}
       <nav className={`${styles.mobileNav} ${open ? styles.open : ""}`} onClick={closeMenu}>
-        <NavLink to="/" end className={navLinkClass}>
+        <NavLink to="/" end className={navLinkClass} >
           {t("home")}
         </NavLink>
         <NavLink to="/about" className={navLinkClass}>
