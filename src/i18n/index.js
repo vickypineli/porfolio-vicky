@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 // Importar módulos por idioma y página
 import esHome from "./es/home.json";
+import esHomeAbout from "./es/homeAbout.json";
 import esAbout from "./es/about.json";
 import esProjects from "./es/projects.json";
 import esSkills from "./es/skills.json";
@@ -10,6 +11,7 @@ import esContact from "./es/contact.json";
 import esHeader from "./es/header.json";
 
 import enHome from "./en/home.json";
+import enHomeAbout from "./en/homeAbout.json";
 import enAbout from "./en/about.json";
 import enProjects from "./en/projects.json";
 import enSkills from "./en/skills.json";
@@ -18,6 +20,7 @@ import enHeader from "./en/header.json";
 
 
 import euHome from "./eu/home.json";
+import euHomeAbout from "./eu/homeAbout.json";
 import euAbout from "./eu/about.json";
 import euProjects from "./eu/projects.json";
 import euSkills from "./eu/skills.json";
@@ -32,6 +35,7 @@ i18n
     resources: {
       es: {
         home: esHome,
+        homeAbout: esHomeAbout,
         about: esAbout,
         projects: esProjects,
         skills: esSkills,
@@ -40,6 +44,7 @@ i18n
       },
       eu: {
         home: euHome,
+        homeAbout: euHomeAbout,
         about: euAbout,
         projects: euProjects,
         skills: euSkills,
@@ -48,6 +53,7 @@ i18n
       },
       en: {
         home: enHome,
+        homeAbout: enHomeAbout,
         about: enAbout,
         projects: enProjects,
         skills: enSkills,
