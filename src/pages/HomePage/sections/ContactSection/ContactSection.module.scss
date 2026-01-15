@@ -1,0 +1,175 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding:$spacing-md;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.Inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+    /* Fondo semitransparente basado en theme */
+  background-color: rgba(var(--rgb-bg), 0.25);
+
+  /* Opcional: un ligero blur para mejorar legibilidad */
+  //backdrop-filter: blur(8px);
+
+  border-radius: $radius-lg;
+}
+
+.Content {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $spacing-md;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ────────────────
+   TEXT
+──────────────── */
+
+.contactSubtitle0 {
+  font-family: $font-base;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+}
+
+.contactTitle {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  line-height: $line-height-heading;
+  color: var(--color-accent);
+}
+
+.contactSubtitle {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.contactSpan {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ────────────────
+   CTA
+──────────────── */
+
+.contactButton {
+  margin-top: $spacing-md;
+  align-self: center;
+
+  padding: 0.75rem 2rem;
+
+  font-family: $font-base;
+  font-size: $font-size-base;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+  background-color: transparent;
+  border-radius: $radius-md;
+  border: 2px solid var(--color-accent);
+  //text-decoration: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
+/* ────────────────
+   TABLET ≥ md
+──────────────── */
+
+@include respond(md) {
+  .section {
+    padding: 4.5rem 2rem;
+  }
+
+  .Content {
+    max-width: 640px;
+    gap: $spacing-2xl;
+  }
+
+  .contactTitle {
+    font-size: clamp(2.4rem, 4vw, 3rem);
+  }
+
+  .contactSubtitle {
+    font-size: $font-size-lg;
+  }
+
+  .contactButton {
+    padding: 0.85rem 2.4rem;
+  }
+}
+
+/* ────────────────
+   DESKTOP ≥ lg
+──────────────── */
+
+@include respond(lg) {
+  .section {
+    height: 100vh;
+    padding: 8rem 2rem;
+  }
+  .Inner{
+    max-width: 1200px;
+    padding: $spacing-xl;
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+
+  .Content {
+    max-width: 900px;
+  }
+
+  .contactTitle {
+    font-size: $font-size-4xl;
+  }
+
+  .contactSubtitle0 {
+    font-size: $font-size-base;
+  }
+
+  .contactSubtitle {
+    font-size: $font-size-lg;
+  }
+
+  .contactButton {
+    margin-top: 2rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(var(--rgb-text), 0.2);
+    }
+  }
+}
