@@ -22,13 +22,13 @@ export default function SkillsPage() {
           <section key={section.section} className={styles.block}>
             <AnimatedGroup>
               <AnimatedItem as="h2">
-                {t(section.titleKey)}
+                {t("subtitle")}
               </AnimatedItem>
 
               <AnimatedItem as="p">
                 <Trans
                   t={t}
-                  i18nKey={section.introKey}
+                  i18nKey={"skillset_intro"}
                   components={{ strong: <strong /> }}
                 />
               </AnimatedItem>
