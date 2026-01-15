@@ -13,20 +13,20 @@ export default function GitHubCalendarSection() {
     theme === "light"
       ? {
           dark: [
-            "#2a0a1f",
-            "#5a0f3c",
-            "#9d174d",
-            "#ec4899",
-            "#f9a8d4",
+            "#8d0031",
+            "#c80045",
+            "#ff045a",
+            "#ff3f81",
+            "#ff7aa8",
           ],
         }
       : {
           light: [
-            "#fde2f3",
-            "#ff9ded",
-            "#ff27d8",
-            "#ff14d5",
-            "#890071",
+            "#ffdce8",
+            "#ff3f81",
+            "#ff045a",
+            "#c80045",
+            "#8d0031",
           ],
         };
 
