@@ -47,8 +47,8 @@ export default function HeroSection() {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color1: 0xff00d1,
-          color2: 0x460039,
+          color2: 0xff3f81,
+          color1: 0xff8cb3, //0x460039,
           separation: 20,
           cohesion: 20,
           quantity: 5,
@@ -72,22 +72,24 @@ export default function HeroSection() {
   }, []); // Se ejecuta una sola vez al montar
 
   return (
-    <main>
-      <section className={styles.home} ref={vantaRef} aria-labelledby="home-heading">
+      <section className={styles.section} ref={vantaRef} aria-labelledby="home-heading">
         <div className={styles.homeInner}>
           <div className={styles.homeContent}>
             <div className={styles.homeText}>
               <h1 id="home-heading" className={styles.homeTitle}>
                 {typedTitle}
               </h1>
-              <p className={styles.homeRole}>
+              <p className={styles.homeSubtitle}>
                 {typedSubtitle}
               </p>
-              < Trans 
-                t={t} 
-                i18nKey="phrase" 
-                components={{ strong: <strong className={styles.homePhrase} /> }} 
-              />  
+              <div className={styles.homeSubtitle1}>
+                < Trans 
+                  t={t} 
+                  i18nKey="phrase" 
+                  components={{ strong: <strong className={styles.homePhrase} /> }} 
+                />  
+              </div>
+
             </div>
 
             <div className={styles.lottieContainer}>
@@ -101,6 +103,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-    </main>
+  
   );
 }
