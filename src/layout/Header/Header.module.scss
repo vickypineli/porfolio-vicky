@@ -48,11 +48,23 @@
   color: var(--color-text);
   font-weight: 500;
   position: relative;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
 
   &:hover { 
-    opacity: 0.6; 
-    color: var(--color-accent);}
+    opacity: 0.9; 
+    color: var(--color-accent);
+  }
   &:active { opacity: 0.4; }
 
   &.active {
