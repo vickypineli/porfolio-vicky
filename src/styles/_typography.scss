@@ -51,3 +51,9 @@ h6 {
   font-size: $font-size-base;
   text-transform: none;
 }
+p {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: var(--color-text);
+}
