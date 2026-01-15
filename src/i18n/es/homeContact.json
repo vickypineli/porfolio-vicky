@@ -1,5 +1,7 @@
 {
-    "title": "¿Trabajamos juntos?",
-    "subtitle": "Soy desarrolladora frontend y estoy abierta a nuevas oportunidades. Si crees que encajo en tu equipo o proyecto, hablemos.",
-    "button": "Ver contacto"
+    "title0": "¿Trabajamos juntos?",
+    "title": "Hablemos",
+    "subtitle0": "¿Buscas a alguien responsable, con criterio y ganas reales de aportar?",
+    "subtitle": "Estoy <span>abierta a oportunidades</span> como desarrolladora web junior o mid‑level, en equipos donde <span>el trabajo bien hecho</span> importe.",
+    "button": "Escríbeme"
   }
