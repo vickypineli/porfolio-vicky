@@ -16,7 +16,7 @@ export default function ProjectDetailPage() {
   const breadcrumbs = useBreadcrumbsFromRoute();
 
   const project = projectsData.find((p) => p.slug === slug);
-
+console.log(project.image);
   if (!project) {
     return (
       <section className={styles.page}>
@@ -49,6 +49,10 @@ export default function ProjectDetailPage() {
               src={project.image}
               alt={project.title}
               loading="lazy"
+              onError={(e) => {
+                // Fallback si la imagen falla
+                e.target.src = "https://via.placeholder.com/800x450?text=No+Image";
+              }}             
             />
           </AnimatedItem>
         )}
