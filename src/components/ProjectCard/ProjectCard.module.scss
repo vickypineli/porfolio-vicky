@@ -1,96 +1,297 @@
 /* src/components/ProjectCard.module.scss */
 
-.card {
-  padding: 1.5rem;
-  border-radius: 12px;
-  background: rgba(var(--rgb-bg), 0.4);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(var(--rgb-text), 0.1);
+/* Importa variables globales (colores, tipografías, spacing, etc.)
+   → Evita hardcodear valores y mantiene consistencia visual */
+@use "../../styles/variables" as *;
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+/* Importa mixins reutilizables (media queries, helpers, etc.)
+   → Aquí no se usan directamente, pero queda preparado para escalar */
+@use "../../styles/mixins" as *;
+
+
+
+/* =========================
+   Card (Link contenedor)
+   ========================= */
+.card {
+  display: block; 
+  /* El <Link> se comporta como bloque → toda la card es clickable */
+
+  border-radius: 12px;
+
+  overflow: hidden;
+  /* Imprescindible para que overlay e imagen respeten el border-radius */
 
   text-decoration: none;
+  /* Elimina subrayado del <a> */
+
   color: inherit;
+  /* Hereda color del contexto, evita estilos de link por defecto */
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-
-  &:hover,
-  &:focus-visible {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    border-color:var(--color-accent);
-  }
+    box-shadow 0.25s ease;
+  /* Transiciones suaves solo en propiedades animadas
+     → evita animar "todo" (mal rendimiento) */
 
   &:focus-visible {
     outline: none;
+    /* Quitamos outline nativo para sustituirlo por uno más visible */
+
     box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.12),
-      0 0 0 3px rgba(var(--rgb-accent), 0.85);
+      0 0 0 3px rgba(var(--rgb-accent), 0.85),
+      0 12px 30px rgba(0, 0, 0, 0.12);
+    /* 
+      - Primer shadow: anillo de foco accesible (teclado)
+      - Segundo shadow: elevación visual
+      → Cumple accesibilidad sin sacrificar estética
+    */
   }
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+
+/* =========================
+   Media (contenedor imagen)
+   ========================= */
+.media {
+  position: relative;
+  /* Necesario para posicionar category y overlay en absoluto */
+
+  aspect-ratio: 16 / 10;
+  /* Reserva espacio antes de cargar la imagen
+     → clave para evitar CLS */
+
+  background: rgba(0, 0, 0, 0.4);
+  /* Fondo visible cuando la imagen es vertical (letterboxing) */
 }
 
+
+/* =========================
+   Imagen
+   ========================= */
+.media img {
+  width: 100%;
+  height: 100%;
+  /* La imagen rellena el contenedor definido por aspect-ratio */
+
+  padding: $spacing-sm;
+  /* Aire interno para que mockups no queden pegados al borde */
+
+  object-fit: contain;
+  /* CLAVE
+     - No recorta imágenes verticales
+     - Mantiene proporción
+     - Acepta barras laterales */
+
+  object-position: center;
+  /* Centra la imagen dentro del contenedor */
+
+}
+
+/* =========================
+   Categoría
+   ========================= */
+.category {
+  position: absolute;
+  /* Se superpone a la imagen */
+
+  top: 0.75rem;
+  left: 0.75rem;
+  /* Posición consistente y predecible */
+
+  z-index: 2;
+  /* Por encima de la imagen y del overlay */
+
+  font-size: $font-size-base;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: rgba(0, 0, 0, 0.6);
+  /* Mejora contraste sobre imágenes claras */
+
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  /* Apariencia de badge */
+}
+
+
+/* =========================
+   Overlay (contenido oculto)
+   ========================= */
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Cubre toda la card sin calcular top/right/bottom/left */
+
+  z-index: 1;
+  /* Debajo de la categoría pero encima de la imagen */
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  /* Layout vertical flexible */
+
+
+
+  background: rgba(0, 0, 0, 0.983);
+  /* Oscurece la imagen para legibilidad */
+
+  //color: white;
+  /* Contraste alto sobre fondo oscuro */
+
+  opacity: 0;
+  /* Oculto por defecto (desktop) */
+
+  transform: translateY(10px);
+  /* Ligero desplazamiento para animación natural */
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  /* Transición solo en propiedades necesarias */
+
+  pointer-events: none;
+  /* Permite que el click siga siendo del <Link>
+     → evita bugs de interacción */
+}
+
+/* =========================
+   Contenido overlay
+   ========================= */
+.overlay .title {
+  margin: 1rem 0;
+  /* Elimina margen por defecto del h3 */
+
+  font-size: $font-size-xl; /* 1.5rem */
+  font-weight: 600;
+  text-align: center;
+  /* Alineación visual consistente */
+}
+
+
+/* =========================
+   Desktop (hover real)
+   ========================= */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    /* Elevación visual → indica interactividad */
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 0 0 2px var(--color-accent);
+    /* 
+      - Primera sombra: profundidad
+      - Segunda: borde sin layout shift
+    */
+    .category {
+      // background: rgba(var(--rgb-accent), 0.15);
+      // color: rgba(var(--rgb-accent), 0.6);
+      font-weight: none;
+      font-size: $font-size-sm;
+      /* Refuerza visibilidad al resaltar sobre sombra */
+    }
+  }
+
+  .card:hover .overlay,
+  .card:focus-visible .overlay {
+    opacity: 1;
+    transform: translateY(0);
+    /* Muestra contenido solo cuando hay intención */
+  }
+}
+
+
+/* =========================
+   Mobile / touch
+   ========================= */
+@media (hover: none) and (pointer: coarse) {
+  .overlay {
+    opacity: 1;
+    transform: none;
+    /* El contenido siempre visible (no existe hover) */
+
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.937),
+      rgba(0, 0, 0, 0.718)
+    );
+    /* Gradiente para mejorar legibilidad sin tapar toda la imagen */
+  }
+}
+
+
+/* =========================
+   Texto
+   ========================= */
 .title {
   margin: 0;
-  font-size: 1.1rem;
+  /* Elimina margen por defecto del h3 */
+
+  font-size: $font-size-lg;
+  text-align: center;
+  font-weight: 600;
+
+  color: var(--color-text);
+  /* Usa color de texto global (tema) */
 }
 
 .description {
-  font-size: 0.9rem;
-  opacity: 0.85;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  /* Texto secundario, menos peso visual */
 }
 
 .techList {
   display: flex;
   flex-wrap: wrap;
+  /* Permite múltiples tecnologías sin romper layout */
+
   gap: 0.4rem;
   padding: 0;
   margin: 0;
   list-style: none;
+  /* Reset de lista */
 
   li {
-    font-size: 0.75rem;
+    font-size: $font-size-base;
     padding: 0.2rem 0.5rem;
+
+    background: rgba(255, 255, 255, 0.15);
+    /* Chips visibles sobre fondo oscuro */
+
     border-radius: 4px;
-    background: rgba(var(--rgb-text), 0.1);
   }
 }
+.ctaContainer {
+  width: 100%;
+  margin-top: 2rem;
+  justify-content: flex-end;
+  display: flex;
+  //background-color: yellowgreen;
+}
 
-/* CTA */
 .cta {
   margin-top: auto;
+  padding: 0 1.5rem;
   font-size: 0.85rem;
   font-weight: 600;
+
   color: var(--color-accent);
-  text-align: end;
-
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* Refuerza acción principal */
 }
 
-/* Mostrar CTA en hover y focus */
-.card:hover .cta,
-.card:focus-visible .cta {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-/* Accesibilidad */
+/* =========================
+   Reduced motion
+   ========================= */
 @media (prefers-reduced-motion: reduce) {
   .card,
-  .cta {
+  .overlay {
     transition: none;
     transform: none;
+    /* Respeta usuarios con sensibilidad al movimiento */
   }
 }

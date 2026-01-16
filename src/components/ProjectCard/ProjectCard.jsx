@@ -1,8 +1,11 @@
+// src/components/ProjectCard/ProjectCard.jsx
+
 import { Link } from "react-router-dom";
 import styles from "./ProjectCard.module.scss";
 
 export default function ProjectCard({
   title,
+  category,
   description,
   image,
   tech,
@@ -14,23 +17,30 @@ export default function ProjectCard({
       className={styles.card}
       aria-label={`Ver detalles del proyecto ${title}`}
     >
-      <img src={image} alt={title} loading="lazy" />
+      <div className={styles.media}>
+        <img src={image} alt={title} loading="lazy" />
 
-      <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
+        <span className={styles.category}>{category}</span>
 
-        <ul className={styles.techList}>
-          {tech.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </ul>
+        <div className={styles.overlay}>
+          <h3 className={styles.title}>{title}</h3>
 
-        {/* CTA */}
-        <span className={styles.cta}>← Ver proyecto </span>
+          <p className={styles.description}>{description}</p>
+
+          <ul className={styles.techList}>
+            {tech.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+            <div className={styles.ctaContainer}>
+              <span className={styles.cta}>← Ver proyecto</span>
+            </div>
+
+        </div>
       </div>
     </Link>
   );
 }
+
 
 
