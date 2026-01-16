@@ -1,4 +1,4 @@
-//src/pages/HomePage/sections/ContactPreviewSection/ContactPreviewSection.jsx
+//src/pages/HomePage/sections/ContactSection/ContactSection.jsx
 
 
 import { useEffect, useRef } from "react";
@@ -47,14 +47,14 @@ export default function ContactSection() {
     <section
       ref={vantaRef}
       className={styles.section}
-      aria-labelledby="contact-preview-title"
+      aria-labelledby="contact-title"
     >
       <div className={styles.Inner}>
         <div className={styles.Content}>
           <p className={styles.contactSubtitle0}>
             {t("subtitle0")}
           </p>
-          <h2 id="contact-preview-title" className={styles.contactTitle}>
+          <h2 id="contact-title" className={styles.contactTitle}>
             {t("title")}
           </h2>
           <div className={styles.contactSubtitle}>
