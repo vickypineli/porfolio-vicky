@@ -2,7 +2,7 @@
 
 import HeroSection from "./sections/HeroSection/HeroSection";
 import AboutSection from "./sections/AboutSection/AboutSection";
-import ProjectsSection from "./sections/ProjectsPreviewSection/ProjectsSection";
+import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
 import ContactSection from "./sections/ContactSection/ContactSection";
 
 

@@ -5,7 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import AnimatedGroup from "../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../components/Animation/AnimatedItem";
 import styles from "./AboutPage.module.scss";
-import womanKoder from "../../assets/images/womanKoder.png";
+import womanKoder from "./../../../public/assets/images/womanKoder.png";
 
 export default function AboutPage() {
   const { t } = useTranslation("about");
