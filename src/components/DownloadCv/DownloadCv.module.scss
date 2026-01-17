@@ -1,0 +1,31 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.cvBtn {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid var(--color-accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    // Un pequeño filtro para oscurecer el fondo si no quieres definir otro color manual
+    //filter: brightness(1.1);
+    //transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+}

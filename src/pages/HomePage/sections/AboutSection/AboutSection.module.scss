@@ -53,12 +53,15 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.actions {
+  width: 100%;
+  margin: auto;
+}
 .ctasContainer {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
- // background-color: red;
 }
 
 // .visual {
@@ -68,16 +71,20 @@
 //   border-radius: 24px;
 //   background-color: #f0f0f0;
 // }
-.cta{
-  margin-top: 2rem;
-  border: 1px solid var(--color-accent);
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--color-accent);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+.cta {
+  font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid var(--color-accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 // /* ESTA es la capa que se mueve */

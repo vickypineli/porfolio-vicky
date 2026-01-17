@@ -1,6 +1,7 @@
 // src/pages/HomePage/sections/AboutSection/AboutSection.jsx
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import DownloadCv from "../../../../components/DownloadCv/DownloadCv";
 import AnimatedGroup from "../../../../components/Animation/AnimatedGroup";
 import AnimatedItem from "../../../../components/Animation/AnimatedItem";
 import styles from "./AboutSection.module.scss";
@@ -40,9 +41,7 @@ export default function AboutSection() {
                 <Link to="/about" className={styles.cta}>
                   {t("cta")}
                 </Link>
-                <Link to="/cv" className={styles.cta}>
-                  {t("cv")}
-                </Link>
+                <DownloadCv label={t("cv")} />
               </div>
             </AnimatedItem>
           </div>
