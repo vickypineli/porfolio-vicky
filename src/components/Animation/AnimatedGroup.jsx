@@ -18,7 +18,7 @@ export default function AnimatedGroup({
   // Detectamos si el grupo está visible. 
   // 'once: true' asegura que la animación solo ocurra la primera vez.
   // 'margin: -80px' evita que se dispare justo en el borde, mejorando la experiencia visual.
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: false, margin: "-80px" });
 
   return (
     <div
