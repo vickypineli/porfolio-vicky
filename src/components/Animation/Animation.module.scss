@@ -1,40 +1,83 @@
-//src/components/Animation/Animation.module.scss
-.group {
-  --stagger: 0.12s;
+// src/components/Animation/Animation.module.scss
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  // Usamos minmax para que en pantallas pequeñas el grid sea más flexible
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 4rem;
+  align-items: center;
+
+  // Fallo potencial: Un grid de 2 columnas se romperá en móviles.
+  // Recomendación pedagógica: Añadir un Media Query básico.
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
-.group > * {
+.text {
+  // El uso de 'ch' es excelente para la legibilidad (aprox. 52 caracteres de ancho).
+  max-width: 52ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.visual {
+  position: relative;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  // Corrección: Asegura que el contenedor tenga un fondo por si la imagen tarda en cargar.
+  background-color: #f0f0f0; 
+}
+
+.cta {
+  margin-top: 1rem;
+  // Evita que el botón se estire a todo el ancho del flex-container.
+  align-self: start;
+}
+
+.visualInner {
+  position: absolute;
+  // Inset -20% es útil para efectos de 'parallax' o zoom sin bordes blancos.
+  inset: -20%;
+  // 'will-change' optimiza el rendimiento avisando al navegador que habrá movimiento.
+  will-change: transform;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 200, 0.9),
+    rgba(0, 0, 0, 0.95)
+  );
+}
+
+// IMPORTANTE: Aquí faltan las clases que tus componentes de React usan
+// para la animación (direction, delay, stagger).
+
+// Lógica para AnimatedItem y AnimatedGroup
+.item {
   opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-  transition-delay: calc(var(--i, 0) * var(--stagger));
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0s); // Lee la prop de React
+
+  &.up { transform: translateY(30px); }
+  &.down { transform: translateY(-30px); }
 }
 
-.group.visible > * {
-  opacity: 1;
-  transform: translate(0);
-}
-
-/* Direcciones */
-.up {
-  transform: translateY(20px);
-}
-
-.left {
-  transform: translateX(-30px);
-}
-
-.right {
-  transform: translateX(30px);
-}
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce) {
-  .group > * {
+// Cuando el padre (Group) recibe .visible, activa a los hijos (.item)
+// En tu Animation.module.scss
+.group.visible {
+  .item {
     opacity: 1;
-    transform: none;
-    transition: none;
+    transform: translateY(0);
+    
+    // Esto automatiza el retraso para cada hijo sin ensuciar el JSX
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        transition-delay: calc(var(--delay, 0s) + (#{$i} * var(--stagger, 0.12s)));
+      }
+    }
   }
 }
