@@ -1,49 +1,87 @@
 //src/styles/layout/Header.scss
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
 
-/* ====== HEADER BASE (GLASS EFFECT) ====== */
+/* ====== HEADER BASE ====== */
 .header {
-  width: 100%;
-  padding: 0.7rem 1.5rem;
   position: fixed;
-  margin: auto;
+  top: 0;
+  width: 100%;
   z-index: 80;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   backdrop-filter: blur(12px);
   background: rgba(var(--rgb-bg), 0.15);
   border-bottom: 1px solid rgba(var(--rgb-accent), 0.12);
-  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+/* ====== HEADER INNER (LAYOUT REAL) ====== */
 .headerInner {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  padding: 0.7rem clamp(1rem, 4vw, 2.5rem);
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+
+  @include respond(md) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
-/* LOGO */
-.headerLogo {
-  font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: -0.5rem;
 
-  a {
-    text-decoration: none;
-    color: var(--color-text);
+/* ====== LOGO ====== */
+.headerLogo {
+  font-size: $font-size-lg;
+  font-family: $font-heading;
+  justify-self: start;
+  font-weight: 700;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  //line-height: 1;
+  color: var(--color-text);
+}
+
+/* Logo animation */
+.logoShort {
+  transition: opacity 0.95s ease, transform 0.95s ease;
+}
+
+.logoFull {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 0.05em;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+.char {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.95s ease, transform 0.95s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover .logoShort {
+    opacity: 0;
+    transform: translateY(-4px);
   }
 
-  .spanM, .spanP { color: var(--color-accent); }
-  .spanV { color: var(--color-text); }
+  .logo:hover .char {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-/* ====== NAV LINKS (COMPARTIDO) ====== */
-/* NAV LINKS */
+
+/* ====== NAV LINKS ====== */
 .navLink {
   color: var(--color-text);
   font-weight: 500;
@@ -61,63 +99,65 @@
     transition: width 0.3s ease;
   }
 
-  &:hover { 
-    opacity: 0.9; 
+  &:hover {
+    opacity: 0.9;
     color: var(--color-accent);
   }
-  &:active { opacity: 0.4; }
 
   &.active {
     font-weight: 600;
+
     &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
       width: 100%;
-      height: 2px;
-      background: currentColor;
+      &::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 100%; height: 2px; background: currentColor; }
     }
   }
 }
 
-/* ====== NAV ESCRITORIO ====== */
-/* NAV ESCRITORIO */
+/* ====== DESKTOP NAV ====== */
 .desktopNav {
   display: none;
-  gap: 1.4rem;
 
-  @include respond(md) { display: flex; }
+  @include respond(md) {
+    display: flex;
+    justify-self: center;
+    gap: 1.6rem;
+  }
 }
 
-/* ====== ACCIONES (IDIOMAS + TEMA) ====== */
-/* IDIOMAS + TEMA */
+/* ====== LANG + THEME ====== */
 .langSwitcher {
   display: none;
-  align-items: center;
-  gap: 0.5rem;
 
-  @include respond(md) { display: flex; }
+  @include respond(md) {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 0.75rem;
+  }
 
   button {
     background: transparent;
     border: 1px solid var(--color-text);
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 4px;
     color: var(--color-text);
     cursor: pointer;
     transition: 0.2s;
 
-    &:hover { 
-      //background: var(--color-accent); 
-      color: var(--color-accent); 
+    &:hover {
+      color: var(--color-accent);
       border-color: var(--color-accent);
     }
+  }
+
+  /* separador visual entre idiomas y theme */
+  > :last-child {
+    margin-left: 0.75rem;
   }
 }
 
 /* ====== HAMBURGUESA ====== */
-/* HAMBURGUESA */
 .burger {
   display: flex;
   flex-direction: column;
@@ -135,16 +175,22 @@
     transition: 0.3s;
   }
 
-  @include respond(md) { display: none; }
+  @include respond(md) {
+    display: none;
+  }
 }
 
-.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.open span:nth-child(2) { opacity: 0; }
-.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.open span:nth-child(2) {
+  opacity: 0;
+}
+.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* ====== MOBILE NAV ====== */
-/* MOBILE NAV */
 .mobileNav {
   position: fixed;
   top: 0;
@@ -152,65 +198,51 @@
   height: 100vh;
   width: 70%;
   max-width: 300px;
-  background: rgba(var(--rgb-bg), );
-  backdrop-filter: blur(14px);
   padding: 5rem 2rem;
+
+  backdrop-filter: blur(14px);
+  background:var(--color-bg);
   z-index: 150;
+
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  overflow-y: auto;
-  transition: left 1.05s ease;
 
-  .navLink { font-size: 1.2rem; }
+  transition: left 1.25s ease;
 
-  &.open { left: 0; }
+  &.open {
+    left: 0;
+  }
+
+  .navLink {
+    font-size: 1.2rem;
+  }
 }
 
 .mobileNav hr {
   border: none;
-  border-top: 0.5px solid rgba(var(--rgb-text), 0.1);
+  border-top: 1px solid rgba(var(--rgb-text), 0.2);
   margin: 1rem 0;
 }
+
 .langSwitcherNav {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
- 
-  button {
-    background: transparent;
+  color: var(--rgb-accent);
+  
+  button{
+    padding: $spacing-sm;
     border: 1px solid var(--color-accent);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
     color: var(--color-accent);
+    border-radius: $radius-md;
     cursor: pointer;
-     &:hover { 
-      background: var(--color-accent); 
-      color: var(--color-text); 
-    }
-  }
-}
-/* ====== MOBILE EXTRAS ====== */
-.mobile-lang {
-  display: flex;
-  gap: 0.5rem;
-
-  button {
-    background: transparent;
-    border: 1px solid var(--color-text);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    color: var(--color-text);
-    cursor: pointer;
+    transition: 0.2s;
+    font-size: $font-size-base;
     &:hover { 
       background: var(--color-accent); 
       color: var(--color-text); 
     }
-  }
-}
 
-.mobile-nav hr {
-  border: none;
-  border-top: 1px solid rgba(var(--rgb-text), 0.2);
-  margin: 1rem 0;
+  }
 }

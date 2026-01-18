@@ -12,7 +12,7 @@ export default function Header() {
   const changeLang = (lng) => i18n.changeLanguage(lng);
   const closeMenu = () => setOpen(false);
 
-    const navLinkClass = ({ isActive }) =>
+  const navLinkClass = ({ isActive }) =>
     isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
 
   return (
@@ -20,13 +20,22 @@ export default function Header() {
       <div className={styles.headerInner}>
         {/* LOGO */}
         <div className={styles.headerLogo}>
-          <a href="#home">
-            <span className={styles.spanM}>M</span>
-            <span className={styles.spanV}>V</span>
-            <span className={styles.spanP}>P</span>
+          <a href="#home" className={styles.logo} aria-label="M.V. Pinero">
+            <span className={styles.logoShort}>MVP</span>
+
+            <span className={styles.logoFull}>
+              {["M", ".", "V", ".", "P", "i", "n", "e", "r", "o"].map((char, i) => (
+                <span
+                  key={i}
+                  className={styles.char}
+                  style={{ transitionDelay: `${i * 40}ms` }}
+                >
+                  {char}
+                </span>
+              ))}
+            </span>
           </a>
         </div>
-
         {/* NAV ESCRITORIO */}
         <nav className={styles.desktopNav}>
           <NavLink to="/" end className={navLinkClass}>{t("home")}</NavLink>
@@ -59,27 +68,19 @@ export default function Header() {
         </button>
       </div>
 
-
       {/* MENU MOVIL */}
-      <nav className={`${styles.mobileNav} ${open ? styles.open : ""}`} onClick={closeMenu}>
-        <NavLink to="/" end className={navLinkClass} >
-          {t("home")}
-        </NavLink>
-        <NavLink to="/about" className={navLinkClass}>
-          {t("about")}
-        </NavLink>
-        <NavLink to="/projects" className={navLinkClass}>
-          {t("projects")}
-        </NavLink>
-        <NavLink to="/skills" className={navLinkClass}>
-          {t("skills")}
-        </NavLink>
-        <NavLink to="/contact" className={navLinkClass}>
-          {t("contact")}
-        </NavLink>
+      <nav
+        className={`${styles.mobileNav} ${open ? styles.open : ""}`}
+        onClick={closeMenu}
+      >
+        <NavLink to="/" end className={navLinkClass}>{t("home")}</NavLink>
+        <NavLink to="/about" className={navLinkClass}>{t("about")}</NavLink>
+        <NavLink to="/projects" className={navLinkClass}>{t("projects")}</NavLink>
+        <NavLink to="/skills" className={navLinkClass}>{t("skills")}</NavLink>
+        <NavLink to="/contact" className={navLinkClass}>{t("contact")}</NavLink>
 
-        <hr /> 
-        
+        <hr />
+
         <div className={styles.langSwitcherNav}>
           <button onClick={() => changeLang("es")}>ES</button>
           <button onClick={() => changeLang("en")}>EN</button>
