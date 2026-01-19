@@ -1,6 +1,7 @@
 // src/components/DownloadCv/DownloadCv.jsx
 
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { BsFiletypePdf } from "react-icons/bs";
 import styles from './DownloadCv.module.scss'; 
 
@@ -26,16 +27,19 @@ export default function DownloadCv({ className }) {
   };
 
 return (
-    <button 
+    <Link
       onClick={handleDownload}
       className={`${styles.cvBtn} ${className}`}
       aria-label={t("cv")} 
     >
-      
-      <span className={styles.icon}></span>
-      <BsFiletypePdf />
+      <span className={styles.icon}>
+        <BsFiletypePdf />
+      </span>
+      <span className={styles.icon}>
       {t("cv")}
-    </button>
+      </span>
+      </Link>
+
   );
 };
 
