@@ -39,12 +39,10 @@
   width: 100%;
   max-width: 1200px;
       /* Fondo semitransparente basado en theme */
-  background-color: rgba(var(--rgb-bg), 0.25);
+  //background-color: rgba(var(--rgb-bg), 0.25);
 
   /* Opcional: un ligero blur para mejorar legibilidad */
   //backdrop-filter: blur(1px);
-
-  border-radius: $radius-lg;
 }
 
 .homeContent {
@@ -58,7 +56,7 @@
 
 .homeTitle {
   font-family: "Lora", serif;
-  font-size: $font-size-3xl;
+  font-size: $font-size-4xl;
   font-weight: 600;
   margin: 0 0 1rem 0;
   color: var(--color-text);
@@ -164,6 +162,10 @@
   }
   .homeContent { order: 2; }
   .homePhotoWrapper { order: 1; max-width: 60%; margin: 0 auto 1.25rem; }
+  .homeTitle { font-size: $font-size-3xl; }
+  .homeSubtitle { font-size: $font-size-xl; }
+  .homePhrase { font-size: $font-size-lg; }
+
 }
 
 /* Respect reduced motion */
