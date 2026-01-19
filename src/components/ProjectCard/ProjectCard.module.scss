@@ -106,8 +106,6 @@
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-accent);
-  background: rgba(0, 0, 0, 0.6);
-  /* Mejora contraste sobre imágenes claras */
 
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
@@ -135,7 +133,7 @@
 
 
 
-  background: rgba(0, 0, 0, 0.983);
+  background: rgba(var(--rgb-bg), 0.95);
   /* Oscurece la imagen para legibilidad */
 
   //color: white;
@@ -180,7 +178,7 @@
     /* Elevación visual → indica interactividad */
 
     box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.12),
+      //0 12px 30px rgba(0, 0, 0, 0.12),
       0 0 0 2px var(--color-accent);
     /* 
       - Primera sombra: profundidad

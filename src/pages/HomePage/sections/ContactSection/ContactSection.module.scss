@@ -8,23 +8,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding:$spacing-md;
-
+  padding: $spacing-md;
   background-color: var(--color-bg);
   color: var(--color-text);
+
+  &::before {
+    content: "";
+    position: absolute;
+    /* 1. Eliminamos la línea transparente estirando el top un poco hacia arriba */
+    top: -10px; 
+    left: 0;
+    width: 100%;
+    /* 2. Aumentamos un poco el alto para que el degradado sea más natural */
+    height: 120px; 
+    
+    /* 3. Degradado: de Opaco Total a Transparente Total */
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg) 0%,        /* 100% Opaco al inicio */
+      var(--color-bg) 20%,       /* Mantenemos opacidad un poco más de distancia */
+      rgba(var(--rgb-bg), 0.5) 70%, 
+      transparent 100%           /* Totalmente invisible al final */
+    );
+    
+    /* 4. Suavizamos la transición del degradado */
+    filter: blur(4px); 
+    z-index: 2;
+    pointer-events: none;
+  }
 }
 
 .Inner {
   width: 100%;
   display: flex;
   justify-content: center;
-    /* Fondo semitransparente basado en theme */
+  //position: relative; /* Asegura contexto de apilamiento */
+  z-index: 3; /* Por encima del efecto de blur */
+  
   background-color: rgba(var(--rgb-bg), 0.25);
-
-  /* Opcional: un ligero blur para mejorar legibilidad */
-  //backdrop-filter: blur(8px);
-
   border-radius: $radius-lg;
 }
 
@@ -36,7 +57,7 @@
   justify-content: center;
   gap: $spacing-md;
   text-align: center;
-  z-index: 1;
+  /* z-index: 1;  <- Eliminado aquí para manejarlo desde el Inner */
 }
 
 /* ────────────────
@@ -45,9 +66,9 @@
 
 .contactSubtitle0 {
   font-family: $font-base;
-  font-size: 0.75rem;
+  font-size:$font-size-base;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  //letter-spacing: 0.15em;
   opacity: 0.7;
 }
 
@@ -65,6 +86,7 @@
   font-weight: 500;
   opacity: 0.85;
 }
+
 .contactSpan {
   color: var(--color-accent);
   font-weight: 600;
@@ -77,29 +99,25 @@
 .contactButton {
   margin-top: $spacing-md;
   align-self: center;
-
   padding: 0.75rem 2rem;
-
   font-family: $font-base;
   font-size: $font-size-base;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   color: var(--color-accent);
   background-color: transparent;
   border-radius: $radius-md;
   border: 2px solid var(--color-accent);
-  //text-decoration: none;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 
   &:active {
     transform: scale(0.96);
   }
 
   &:focus-visible {
-    outline: px solid var(--color-accent);
+    outline: 2px solid var(--color-accent);
     outline-offset: 4px;
   }
 }
@@ -140,7 +158,8 @@
     height: 100vh;
     padding: 8rem 2rem;
   }
-  .Inner{
+  
+  .Inner {
     max-width: 1200px;
     padding: $spacing-xl;
     display: flex;
@@ -150,6 +169,7 @@
 
   .Content {
     max-width: 900px;
+    text-align: left; /* Alineado a la izquierda como es común en desktop */
   }
 
   .contactTitle {
@@ -166,10 +186,12 @@
 
   .contactButton {
     margin-top: 2rem;
+    align-self: flex-start;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(var(--rgb-text), 0.2);
+      background-color: rgba(var(--rgb-accent), 0.1);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
     }
   }
 }

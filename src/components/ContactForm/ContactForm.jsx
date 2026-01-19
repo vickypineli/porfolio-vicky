@@ -1,6 +1,7 @@
 // src/components/ContactForm/ContactForm.jsx
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import AnimatedItem from "../Animation/AnimatedItem";
 import styles from "./ContactForm.module.scss";
 
@@ -152,9 +153,9 @@ export default function ContactForm() {
         <input type="text" name="company" tabIndex="-1" autoComplete="off" onChange={handleChange} />
       </label>
 
-      <button type="submit" className={styles.button} disabled={status === "sending" || hasErrors}>
+      <Link   type="submit" className={styles.button} disabled={status === "sending" || hasErrors}>
         {status === "sending" ? t("form_sending") : t("form_submit")}
-      </button>
+      </Link>
 
       {status === "success" && (
         <AnimatedItem as="p" className={styles.success} direction="up">

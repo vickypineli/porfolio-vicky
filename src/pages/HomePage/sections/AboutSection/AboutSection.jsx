@@ -15,11 +15,11 @@ export default function AboutSection() {
         {/* Cascada REAL: todos hermanos directos */}
         <AnimatedGroup stagger={0.3} className={styles.text}>
           <AnimatedItem as="h2" className={styles.title}>
-            About Me
+            {t("title")}
           </AnimatedItem>
 
           <AnimatedItem as="p" className={styles.subtitle}>
-            {t("title")}
+            {t("subtitle")}
           </AnimatedItem>
 
           <AnimatedItem as="p">

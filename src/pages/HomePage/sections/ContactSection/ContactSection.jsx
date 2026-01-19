@@ -4,44 +4,57 @@
 import { useEffect, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useThemeColors } from "../../../../hooks/useThemeColors"; // Importa tu hook
 import styles from "./ContactSection.module.scss";
 
 export default function ContactSection() {
   const { t } = useTranslation("homeContact");
+  const theme = useThemeColors(); // Obtenemos 'light' o 'dark'
 
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
 
-  useEffect(() => {
+useEffect(() => {
     if (!window.VANTA?.GLOBE || !window.THREE) return;
 
-    if (!vantaEffect.current && vantaRef.current) {
-      vantaEffect.current = window.VANTA.GLOBE({
-        el: vantaRef.current,
-        THREE: window.THREE,
-      // Controles de la animacion
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-      //Tamaño de la animacion
-        minHeight: 500.00,
-        minWidth: 500.00,
-      //tamaño y escala del globo
-        scale: 1.00,
-        scaleMobile: 1.00,
-        size:0.90,
-      //colores
-        color2: 0xe9e5eb,
-        color: 0xff3f81,
-        backgroundAlpha: 0 ,
-      });
+    // Definimos los colores según el tema
+    // Modo Light: Colores oscuros para que contrasten
+    // Modo Dark: Tus colores originales brillantes
+    const isLight = theme === "light";
+    
+    const vantaColors = {
+      color2: isLight ? 0x585858 : 0xff3f81,    // Líneas principales
+      color: isLight ? 0xff3f81 : 0xe9e5eb,   // Puntos/Nodos
+      //size: isLight ? 0.70 : 0.90,             // Opcional: un poco más pequeño en light
+      size: 0.90,
+    };
+
+    // Si ya existe un efecto, lo destruimos antes de crear el nuevo
+    if (vantaEffect.current) {
+      vantaEffect.current.destroy();
     }
 
+    vantaEffect.current = window.VANTA.GLOBE({
+      el: vantaRef.current,
+      THREE: window.THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: true,
+      minHeight: 500.0,
+      minWidth: 500.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      size: vantaColors.size,
+      color: vantaColors.color,
+      color2: vantaColors.color2,
+      backgroundAlpha: 0, // Mantenemos transparencia para ver tu degradado CSS
+    });
+
     return () => {
-      vantaEffect.current?.destroy();
-      vantaEffect.current = null;
+      if (vantaEffect.current) vantaEffect.current.destroy();
     };
-  }, []);
+    // El efecto se reiniciará cada vez que 'theme' cambie
+  }, [theme]);
 
   return (
     <section
