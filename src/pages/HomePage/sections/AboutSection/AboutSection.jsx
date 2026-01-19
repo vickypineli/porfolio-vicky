@@ -12,47 +12,44 @@ export default function AboutSection() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <AnimatedGroup className={styles.text} stagger={0.85}>
-          <div className={styles.titleContainer}>
-            <span className={styles.label}>About Me</span>
-              <AnimatedItem as="h2">
-                {t("title")}
-              </AnimatedItem>
-          </div>
-          <div className={styles.text}>
-              <AnimatedItem as="p">
-                {t("p1")}
-              </AnimatedItem>
+        {/* Cascada REAL: todos hermanos directos */}
+        <AnimatedGroup stagger={0.3} className={styles.text}>
+          <AnimatedItem as="h2" className={styles.title}>
+            About Me
+          </AnimatedItem>
 
-              <AnimatedItem as="p">
-                {t("p2")}
-              </AnimatedItem>
-          </div>
-          <div className={styles.textActions}>
-            <AnimatedItem as="p">
-              {t("p3")}
-            </AnimatedItem>
+          <AnimatedItem as="p" className={styles.subtitle}>
+            {t("title")}
+          </AnimatedItem>
 
-            {/* 2. Corrección de Semántica: Un div para los botones está bien, 
-              pero asegúrate de que el 'cta' herede los estilos correctamente.
-            */}
-            <AnimatedItem as="div" className={styles.actions}>
-              <div className={styles.ctasContainer}>
-                <Link to="/about" className={styles.cta}>
-                  {t("cta")}
-                </Link>
-                <DownloadCv label={t("cv")} />
-              </div>
-            </AnimatedItem>
-          </div>
+          <AnimatedItem as="p">
+            {t("p1")}
+          </AnimatedItem>
 
+          <AnimatedItem as="p">
+            {t("p2")}
+          </AnimatedItem>
 
+          <AnimatedItem as="p">
+            {t("p3")}
+          </AnimatedItem>
+
+          <AnimatedItem as="div" className={styles.actions}>
+            <div className={styles.ctasContainer}>
+              <Link to="/skills" className={styles.ctaBtn}>
+                {t("cta")}
+              </Link>
+              <DownloadCv label={t("cv")} /> 
+            </div>
+          </AnimatedItem>
         </AnimatedGroup>
-{/* 
-        <div className={styles.visual}>
-          <div className={styles.visualInner}></div>
-        </div> */}
       </div>
+      <AnimatedGroup stagger={1.9}>
+        <AnimatedItem as="div" >
+          <hr className={styles.lineSeparator}/>
+        </AnimatedItem>
+      </AnimatedGroup>
     </section>
+    
   );
 }

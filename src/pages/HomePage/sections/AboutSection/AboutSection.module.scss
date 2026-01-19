@@ -13,98 +13,81 @@
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  display:flex;
-  flex-direction: column;
-  gap: 3rem;
-  justify-content: center;
-}
-.titleContainer {
-  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  .title {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  h2{
-    text-align: center;
-  }
-  span {
-    color: var(--color-text);
-    text-align: center ;
-  }
 }
+
+/* Contenedor animado */
 .text {
   width: 100%;
-  padding: $spacing-md;
-  align-items: center;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.textActions {
-  width: 100%;
-  padding: $spacing-md ;
-  margin-top: 2rem;
-  display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
 }
+
+/* Título */
+.title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: $font-size-md;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Acciones */
 .actions {
-  width: 100%;
-  margin: auto;
+  margin-top: 2rem;
 }
+
 .ctasContainer {
   display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-// .visual {
-//   position: relative;
-//   height: 820px;
-//   overflow: hidden;
-//   border-radius: 24px;
-//   background-color: #f0f0f0;
-// }
-.cta {
+/* CTA */
+.ctaBtn {
   font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    border: 1px solid var(--color-accent);
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-md;
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+    &:hover {
+    background-color: transparent;
     color: var(--color-accent);
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 10px 20px rgba(var(--rgb-accent), 0.3);
+
+  }
+}
+.lineSeparator{
+  width: 100%;
+  height: 0.5px;
+  width: 50%;                 
+  margin: 100px auto 0;      
+  background-color: rgba(var(--rgb-text), 0.1);
+  box-shadow: 2px 2px 14px rgba(var(--rgb-accent), 0.3);
+  /* Opcional: bordes redondeados para un look más suave */
+  border-radius: 4px;
 }
 
-// /* ESTA es la capa que se mueve */
-// .visualInner {
-//   position: absolute;
-//   inset: -20%;
-//   will-change: transform;
-//   background: linear-gradient(
-//     135deg,
-//     rgba(255, 0, 200, 0.9),
-//     rgba(0, 0, 0, 0.95)
-//   );
-// }
-
-@media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
-  }
-
-  .visual {
-    height: 260px;
+/* Responsive */
+@media (max-width: 768px) {
+  .text {
+    padding: 0 1rem;
   }
 }
