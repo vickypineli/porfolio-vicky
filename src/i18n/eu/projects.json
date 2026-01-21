@@ -14,21 +14,13 @@
     "title": "Proiektua ez da aurkitu",
     "back": "Proiektuetara itzuli"
   },
-  "projects": {
-    "edu_platform": {
-      "description": "Gamifikazioa eta jarduerazko ikasketa oinarritutako plataforman."
-    },
-    "portfolio": {
-      "description": "React eta SCSS erabiliz garatutako portfolio pertsonala."
-    },
-    "ecommerce_site": {
-      "description": "Erosketa-egitura eta ordainketa-pasartea dituen webgunea."
-    },
-    "web_app": {
-      "description": "Zereginen eta produktibitatearen kudeaketarako web aplikazioa."
-    },
-    "mobile_app": {
-      "description": "Blogak editatzeko WYSIWYG editorearekin eta iruzkin-sistemarekin mobile aplikazioa."
+  "descriptions": {
+      "landing_page_NewKoncept": "Arkitektura estudio baten lurreratze-orria, diseinu minimalista eta zorro bisuala ardatz dituena.",
+      "guitar_shop": "Gitarren e-commerce plataforma React-ekin eraikia, produktuak filtratzeko eta erosketa-saskiaren funtzionalitateekin.",
+      "cash_flow": "Diru-fluxua kudeatzeko mugikorrentzako aplikazioa, Vue-rekin garatua finantza pertsonalak jarraitzeko.",
+      "efilm_online": "Filmak erreproduzitzeko plataforma React-ekin eraikia, edukien katalogo dinamiko batekin.",
+      "TheShelfTV": "Filmak erreproduzitzeko plataforma osoa, Next.js, Django, Sass eta Bootstrap erabiliz garatua.",
+      "libelista": "Liburuen e-commerce plataforma React, Sass eta Bootstrap-ekin eraikia, liburu-denda independenteetan zentratua.",
+      "webprueba": "Liburuen e-commerce proiektua React, Sass eta Bootstrap-ekin eraikia, probak egiteko."
     }
-  }
 }

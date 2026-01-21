@@ -14,21 +14,13 @@
     "title": "Project not found",
     "back": "Back to projects"
   },
-  "projects": {
-    "edu_platform": {
-      "description": "Educational platform based on gamification and active learning."
-    },
-    "portfolio": {
-      "description": "Personal portfolio developed with React and SCSS."
-    },
-    "ecommerce_site": {
-      "description": "E-commerce website with shopping cart and payment gateway."
-    },
-    "web_app": {
-      "description": "Web application for task management and productivity."
-    },
-    "mobile_app": {
-      "description": "Mobile application for blogs with WYSIWYG editor and comment system."
+  "descriptions": {
+      "landing_page_NewKoncept": "Detailed landing page for an architecture studio, focusing on minimalist design and visual portfolio.",
+      "guitar_shop": "Guitars e-commerce platform built with React, featuring product filtering and shopping cart functionality.",
+      "cash_flow": "Cash flow management mobile app built with Vue, designed for personal finance tracking.",
+      "efilm_online": "Movie streaming platform built with React, featuring a dynamic content catalog.",
+      "TheShelfTV": "Comprehensive movie streaming platform developed using Next.js, Django, Sass, and Bootstrap.",
+      "libelista": "Books e-commerce platform built with React, Sass, and Bootstrap, focused on independent bookstores.",
+      "webprueba": "Books e-commerce project built with React, Sass, and Bootstrap for testing purposes."
     }
-  }
 }

@@ -14,21 +14,15 @@
     "title": "Proyecto no encontrado",
     "back": "Volver a proyectos"
   },
-  "projects": {
-    "edu_platform": {
-      "description": "Plataforma educativa basada en gamificación y aprendizaje activo."
-    },
-    "portfolio": {
-      "description": "Portfolio personal desarrollado con React y SCSS."
-    },
-    "ecommerce_site": {
-      "description": "Sitio de comercio electrónico con carrito de compras y pasarela de pago."
-    },
-    "web_app": {
-      "description": "Aplicación web para la gestión de tareas y productividad."
-    },
-    "mobile_app": {
-      "description": "Aplicacion movil para blogs con editor WYSIWYG y sistema de comentarios."
-    }
+  "descriptions": {
+    "landing_page_NewKoncept": "Esta es la descripción detallada del estudio de arquitectura en español...",
+    "guitar_shop": "E-commerce de guitarras construido con React...",
+    "cash_flow": "App de flujo de efectivo construida con Vue...",
+    "efilm_online": "Plataforma de streaming de peliculas construida con React...",
+    "TheShelfTV": "Plataforma de streaming de peliculas construida con Next.js, Django,sass, bootsrap...",
+    "libelista": "E-commerce de libros construido con React, sass, bootsrap...",
+    "webprueba": "E-commerce de libros construido con React, sass, bootsrap..."
   }
+
+  
 }

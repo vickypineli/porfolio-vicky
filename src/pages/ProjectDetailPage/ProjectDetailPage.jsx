@@ -41,7 +41,7 @@ export default function ProjectDetailPage() {
             <AnimatedItem as="h1">{project.title}</AnimatedItem>
 
             <AnimatedItem as="div" className={styles.description}>
-              {t(`projects.${project.id}.description`)}
+              {t(`descriptions.${project.id}`)}
             </AnimatedItem>
             <AnimatedItem as="div" className={styles.imageWrapper}>
               <img 
