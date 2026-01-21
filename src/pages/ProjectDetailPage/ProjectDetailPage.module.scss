@@ -21,13 +21,20 @@
 }
 
 .imageWrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(var(--rgb-text), 0.12);
+  display: flex; // Ayuda a centrar y dar cuerpo
+  justify-content: center;
 
   img {
     width: 100%;
     display: block;
+    display: block;
+    object-fit: cover;
   }
 }
 

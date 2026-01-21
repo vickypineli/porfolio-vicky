@@ -5,7 +5,7 @@ export const projectsData = [
       slug: "landing-page-NewKoncept",
       title: " Estudio Arquitectura",
       category:"Landing Page",
-      image: "/assets/images/newKoncept.png",
+      image: "/assets/images/test.png",
       tech: ["JQuery", "Html", "CSS", "JS"],
       repo: "https://github.com/vickypineli/newKoncept/",
       demo: "https://new-koncept.vercel.app/",
@@ -59,5 +59,15 @@ export const projectsData = [
       tech:["React", "python", "Django"],
       repo:"https://github.com/...",
       demo:"https://libelista.com/"
+    },
+    {
+      id:"webprueba",
+      slug:"webprueba",
+      title:"Libelista",
+      category:"Web App",
+      image:"",
+      tech:["React", "python", "Django"],
+      repo:"https://github.com/...",
+      demo:""
     }
 ];

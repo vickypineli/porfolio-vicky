@@ -11,6 +11,9 @@ export default function ProjectCard({
   tech,
   slug,
 }) {
+
+  const defaultImage = "/assets/images/nophoto.png";
+  const imageToShow = image ? image : defaultImage;
   return (
     <Link
       to={`/projects/${slug}`}
@@ -18,7 +21,7 @@ export default function ProjectCard({
       aria-label={`Ver detalles del proyecto ${title}`}
     >
       <div className={styles.media}>
-        <img src={image} alt={title} loading="lazy" />
+        <img src={imageToShow} className={styles.image} alt={title ? title : "Sin título"} loading="lazy" />
 
         <span className={styles.category}>{category}</span>
 

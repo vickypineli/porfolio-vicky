@@ -52,9 +52,9 @@ export default function ProjectsPage() {
     <section className={styles.projects}>
       <div className={styles.inner}>
         <Breadcrumbs items={breadcrumbs} />
-
+        <AnimatedGroup className={styles.title}>
         <AnimatedItem as="h2">{t("page_title")}</AnimatedItem>
-
+        </AnimatedGroup>
         {/* FILTRO */}
         <AnimatedGroup className={styles.filters}>
           <button

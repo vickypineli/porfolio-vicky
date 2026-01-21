@@ -14,10 +14,8 @@ export default function ProjectDetailPage() {
   const { slug } = useParams();
   const { t } = useTranslation("projects");
   const breadcrumbs = useBreadcrumbsFromRoute();
-
   const project = projectsData.find((p) => p.slug === slug);
-console.log(project.image);
-  if (!project) {
+    if (!project) {
     return (
       <section className={styles.page}>
         <h1>{t("not_found.title")}</h1>
@@ -28,34 +26,31 @@ console.log(project.image);
     );
   }
 
+  const defaultImage = "/assets/images/nophoto.png";
+  const imageToShow = project.image ? project.image : defaultImage;
+
   return (
     <section className={styles.page}>
       <div className={styles.inner}>
 
         <Breadcrumbs items={breadcrumbs} />
-
-        <AnimatedGroup>
-          <AnimatedItem as="h1">{project.title}</AnimatedItem>
-
-          <AnimatedItem as="div" className={styles.description}>
-            {t(`projects.${project.id}.description`)}
-          </AnimatedItem>
-        </AnimatedGroup>
-
         {/* Imagen */}
-        {project.image && (
-          <AnimatedItem className={styles.imageWrapper}>
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              onError={(e) => {
-                // Fallback si la imagen falla
-                e.target.src = "https://via.placeholder.com/800x450?text=No+Image";
-              }}             
-            />
-          </AnimatedItem>
-        )}
+          {/* // Al añadir key={slug}, obligas a React a RECREAR las animaciones 
+          // cada vez que cambias de proyecto. */}
+          <AnimatedGroup key={slug}> 
+            <AnimatedItem as="h1">{project.title}</AnimatedItem>
+
+            <AnimatedItem as="div" className={styles.description}>
+              {t(`projects.${project.id}.description`)}
+            </AnimatedItem>
+            <AnimatedItem as="div" className={styles.imageWrapper}>
+              <img 
+                src={imageToShow} 
+                alt={project.image ? project.title : "Default project image"} 
+                loading="lazy"
+              />
+            </AnimatedItem>
+          </AnimatedGroup>
 
         {/* Tecnologías */}
         <AnimatedGroup>
